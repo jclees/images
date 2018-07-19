@@ -95,7 +95,7 @@
                 </div>
             </div>
             <a href="javascript:;" id="closeSign">
-                <img class="layer_close" src='images/sign_close.png' >
+                <img class="layer_close" src='images/sign_close.png'>
             </a>
         </div>
     </div>
@@ -103,21 +103,21 @@
     <div class="main_mlwrap" catchtouchmove="myCatchTouch">
         <div class="cover" onclick='closeMl()'></div>
         <div class="ml_list animated">
-                <div class="active">第一章：死亡游戏</div>
-                <div>第二章：死亡游戏</div>
-                <div>第二章：死亡游戏</div>
-                <div>第二章：死亡游戏</div>
-                <div>第二章：死亡游戏</div>
-                <div>第二章：死亡游戏</div>
-                <div>第二章：死亡游戏</div>
-                <div>第二章：死亡游戏</div>
-                <div>第三章：死亡游戏</div>
-                <div>第四章：死亡游戏</div>
-                <div>第五章：死亡游戏</div>
-                <div>第二章：死亡游戏</div>
-                <div>第二章：死亡游戏</div>
-                <div>第二章：死亡游戏</div>
-                <div>第二章：死亡游戏</div>
+            <div class="active">第一章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第三章：死亡游戏</div>
+            <div>第四章：死亡游戏</div>
+            <div>第五章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
         </div>
     </div>
     <!-- 内容 -->
@@ -136,9 +136,11 @@
             </div>
         </div>
         <div class="main_piece clearfix">
-            <div class="fl" onclick='openMl()'>
-                <img src='images/icon_ml.png' class="icon_ml">
-                <div class="txt">查看目录</div>
+            <div class="fl" >
+                <a href="javascript:;" id="openMl">
+                    <img src='images/icon_ml.png' class="icon_ml">
+                    <div class="txt">查看目录</div>
+                </a>
             </div>
             <div class="fl" onclick="changFont(1)">
                 <img src='images/icon_sign.png' class="icon_sign">
@@ -153,7 +155,7 @@
                 <img src='images/icon_msg.png' class="icon_myshuq">
                 <div class="txt">我的书圈</div>
             </div>
-            <div class="fl" id="goReadingBook" >
+            <div class="fl" id="goReadingBook">
                 <div class="txt">免费阅读</div>
             </div>
             <div class="fl" onclick="changFont(1)">
@@ -256,28 +258,31 @@
     <!-- <script type="text/javascript" src="js/rem.js"></script> -->
     <!-- 侧滑插件 -->
     <script>
-function closeSign() {
-    
-}
-$("#closeSign").on("touchend",function(){
-    $(".layer").hide()
-    alert(1111)
-})
-$("#goReadingBook").on("touchend",function(){
-    window.location.href = 'readingbook.html'
-})
-function goReadingBook() {
-}
-function closeMl() {
-    $(".ml_list").removeClass("slideInLeft").addClass("slideOutLeft")
-    setTimeout(() => {
-        $(".main_mlwrap").hide()
-    }, 300);
-}
-function openMl() {
-    $(".main_mlwrap").show()
-    $(".ml_list").addClass("slideInLeft").removeClass("slideOutLeft")
-}
+        function closeSign() {
+
+        }
+        $("#closeSign").on("touchend", function () {
+            $(".layer").hide()
+        })
+        $("#goReadingBook").on("touchend", function () {
+            window.location.href = 'readingbook.html'
+        })
+        function goReadingBook() {
+        }
+        function closeMl() {
+            $(".ml_list").removeClass("slideInLeft").addClass("slideOutLeft")
+            setTimeout(() => {
+                $(".main_mlwrap").hide()
+            }, 300);
+        }
+        $("#openMl").on("touchend", function () {
+            
+            $(".ml_list").addClass("slideInLeft").removeClass("slideOutLeft")
+            setTimeout(() => {
+                $(".main_mlwrap").show()
+            }, 300);
+        })
+        
     </script>
 </body>
 
