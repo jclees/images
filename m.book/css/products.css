@@ -1,0 +1,154 @@
+.xy_footer{
+    background: #333230;
+}
+.xy_footer p{
+    color:#fff;
+    line-height: 18px;
+}
+/*图片盒子*/
+.img_box{
+    width:100%;
+    padding-bottom: 10%;
+}
+.img_box img{
+    width:100%;
+}
+/*标题*/
+.title h2{
+    padding:6% 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: normal;
+}
+.title.red h2{
+    color:#335c55;
+}
+.title.color_fch h2{
+    color:#0a968c;
+}
+.title.color_zs h2{
+    color:#da422f;
+}
+.title.color_jxs h2{
+    color:#1a7491;
+}
+.title.color_shop h2{
+    color:#8e603d;
+}
+.title.color_jb h2{
+    color:#159ae2;
+}
+.txt_intro{
+    width:90%;
+    margin:0 auto;
+    padding:12% 0;
+}
+.txt_intro p{
+    font-size: 16px;
+    color:#666;
+    padding-bottom: 4%;
+    line-height: 32px;
+}
+.gyl_txt_intro{
+  text-align: center;
+  font-size: 16px;
+  color:#033151;
+  padding:5% 0 10% 0;
+}
+.gyl_txt_intro p:nth-child(2){
+  font-size: 12px;
+  padding-top: 2%;
+}
+
+/*产品安全追溯页面*/
+.ProductQS section{
+  text-align: center;
+}
+.ProductQS section:first-child{
+  padding:6% 0;
+  border-bottom: 10px solid #eee;
+}
+.ProductQS section:first-child h2{
+  font-size: 20px;
+  padding-bottom: 2%;
+  color:#58cd86;
+}
+.ProductQS section:first-child p{
+  font-size: 18px;
+}
+.ProductQS section.sub_page{
+  padding:8% 0;
+}
+.ProductQS section.sub_page h2{
+  color:#25bb60;
+  font-size: 22px;
+  padding-bottom: 4%;
+}
+.ProductQS section.sub_page p{
+  font-size: 16px;
+  line-height: 32px;
+  padding:0 6% 2% 6%;
+}
+.ProductQS section.sub_page a{
+  border:1px solid #58cd86;
+  color:#58cd86;
+  font-size: 18px;
+  border-radius: 6px;
+  display:block;
+  margin:0 auto;
+  padding:2% 0;
+  width:36%;
+}
+
+
+@media screen and (min-width:320px) and (min-width:380px){
+   .title h2{
+       font-size: 18px;
+   }
+   .txt_intro p{
+       font-size: 16px;
+   }
+   .gyl_txt_intro{
+      font-size: 18px;
+    }
+    .gyl_txt_intro p:nth-child(2){
+      font-size: 14px;
+    }
+    /*产品安全追溯页面*/
+    .ProductQS section:first-child h2{
+      font-size: 22px;
+    }
+    .ProductQS section:first-child p{
+      font-size: 18px;
+    }
+    .ProductQS section.sub_page h2{
+      font-size: 24px;
+    }
+    .ProductQS section.sub_page p{
+      font-size: 16px;
+    }
+    .ProductQS section.sub_page a{
+      font-size: 20px;
+    }
+}
+.mask_bg{
+  width:100%;
+  height:100%;
+  position:fixed;
+  left:0;
+  top:0;
+  display: none;
+  text-align: center;
+  font-size: 18px;
+  color:#fff;
+  padding-top:50%;
+  background: rgba(0, 0, 0, 0.8);
+}
+.mask_bg img{
+  width:100%;
+  position:absolute;
+  right: 0;
+  top:0;
+}
+.marg_none{margin:0;}
+.padd_none{padding:0;}
