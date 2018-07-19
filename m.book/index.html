@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -254,7 +254,23 @@
     <!-- <script type="text/javascript" src="js/rem.js"></script> -->
     <!-- 侧滑插件 -->
     <script>
-
+function closeSign() {
+    $(".layer").hide()
+    alert(1111)
+}
+function goReadingBook() {
+    window.location.href = 'readingbook.html'
+}
+function closeMl() {
+    $(".ml_list").removeClass("slideInLeft").addClass("slideOutLeft")
+    setTimeout(() => {
+        $(".main_mlwrap").hide()
+    }, 300);
+}
+function openMl() {
+    $(".main_mlwrap").show()
+    $(".ml_list").addClass("slideInLeft").removeClass("slideOutLeft")
+}
     </script>
 </body>
 
