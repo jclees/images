@@ -1,541 +1,289 @@
-/********公共样式************/
-body{
-    background: #fff;
-}
-.animated {
-    -webkit-animation-duration: 1s;
-    animation-duration: .5s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-  }
-div,img{
-    cursor: pointer !important;
-}
-.layer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 10;
-  }
-  
-  .layer .layer_cover {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: rgba(0, 0, 0, 0.4);
-  }
-  
-  .layer .layer_main {
-    position: absolute;
-    left: 50%;
-    bottom: 8%;
-    transform: translate(-50%, 0);
-  }
-  
-  .layer .layer_main .layer_main_cover {
-    box-sizing: border-box;
-    position: relative;
-    z-index: 99;
-  }
-  
-  .layer .layer_main .layer_main_cover .layer_main_cover_bgpic {
-    width: 88.3vw;
-  }
-  
-  .layer .layer_main .layer_title {
-    font-size: 5.1vw;
-    text-align: center;
-  }
-  
-  .layer .layer_main .layer_content {
-    width: 100%;
-    font-size: 4.3vw;
-    line-height: 6.4vw;
-    margin-top: 5.3vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    text-align: center;
-  }
-  
-  .layer .layer_main .layer_content .total_day {
-    font-size: 3.7vw;
-    color: #fff;
-    text-align: center;
-    height: 6.4vw;
-    line-height: 6.4vw;
-    border-radius: 6.7vw;
-    margin: 14.7vw auto 12vw;
-    background: #121314;
-    display: inline-block;
-    padding: 0 2.9vw;
-  }
-  
-  .layer .layer_main .layer_content .total_day .day_num {
-    color: #fecb4f;
-  }
-  
-  .layer .layer_main .layer_content .sign_tip {
-    font-size: 3.2vw;
-    color: #999;
-  }
-  
-  .layer .layer_main .layer_content .sign_day_list {
-    margin: 4vw auto;
-  }
-  
-  .layer .layer_main .layer_content .sign_day_list > div {
-    display: inline-block;
-    color: #000;
-    font-size: 4vw;
-    background: #f0f0f0;
-    border-radius: 1.3vw;
-    padding: 0 2.1vw;
-    margin-right: 1.6vw;
-  }
-  
-  .layer .layer_main .layer_content .sign_day_list > div.cur_day {
-    border: 0.3vw solid #2ea2fc;
-  }
-  
-  .layer .layer_main .layer_content .sign_day_list > div.has_day,
-  .layer .layer_main .layer_content .sign_day_list > div.out_day {
-    background: #d8d8d8;
-    position: relative;
-  }
-  
-  .layer .layer_main .layer_content .sign_day_list > div:last-of-type {
-    margin-right: 0;
-  }
-  
-  .layer .layer_main .layer_content .sign_day_list > div .sign_gold {
-    width: 4.8vw;
-    margin-bottom: 1.1vw;
-  }
-  
-  .sign_success, .out_day_txt {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .out_day_txt {
-    color: #2ea2fc;
-    font-size: 3.2vw;
-    width: 100%;
-  }
-  
-  .sign_success {
-    width: 6.4vw;
-  }
-  
-  .layer .layer_main .layer_content .total_day_list {
-    margin: 2.9vw auto 4vw;
-  }
-  
-  .layer .layer_main .layer_content .total_day_list > div {
-    display: inline-block;
-    color: #9a9a9a;
-    font-size: 4.3vw;
-    border-radius: 1.3vw;
-    /* padding: 0 8px; */
-    margin-right: 4.3vw;
-    position: relative;
-  }
-  
-  .layer .layer_main .layer_content .total_day_list > div .total_day_list_box {
-    width: 13.3vw;
-    height: 13.3vw;
-    border: 0.3vw solid #9a9a9a;
-    border-radius: 40vw;
-    font-size: 2.1vw;
-    padding-top: 5.9vw;
-    box-sizing: border-box;
-  }
-  
-  .layer .layer_main .layer_content .total_day_list > div .txt {
-    font-size: 3.5vw;
-    padding-top: 2.9vw;
-  }
-  
-  .layer .layer_main .layer_content .total_day_list > div:last-of-type {
-    margin-right: 0;
-  }
-  
-  .layer .layer_main .layer_content .total_day_list > div .sign_quan {
-    width: 4.8vw;
-    position: absolute;
-    top: 1.9vw;
-    left: 50%;
-    margin-left: -2.4vw;
-  }
-  
-  .layer .layer_main .layer_btn_group {
-    margin-top: 5.3vw;
-  }
-  
-  .layer .layer_main .layer_btn_group button {
-    font-size: 4;
-    background: #2ea2fc;
-    color: #fff;
-    width: 75%;
-    border-radius: 6.7vw;
-    padding: 2.7vw 0;
-  }
-  
-  .layer .layer_close {
-    width: 8vw;
-    margin: 5.3vw auto 0;
-    display: block;
-  }
-  
-  .mask-wrap {
-    position: fixed;
-    background: rgba(0, 0, 0, 0.5);
-    left: 0;
-    top: 0;
-    z-index: 99;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .mask-wrap .mask-con {
-    background: #fff;
-    width: 152.8vw;
-    margin: 0 auto;
-    padding: 13.3vw 20.3vw;
-    box-sizing: border-box;
-    margin-top: 80vw;
-    border-radius: 2.7vw;
-  }
-  
-  .mask-wrap .mask-title {
-    font-size: 9.6vw;
-    color: #000;
-    margin-bottom: 13.3vw;
-    text-align: center;
-  }
-  
-  .mask-wrap .mask-txt {
-    font-size: 7.5vw;
-    color: #989898;
-    line-height: 15.5vw;
-  }
-  
-  .mask-wrap .icon-sq {
-    width: 28vw;
-    margin: 10.7vw auto;
-  }
-  
-  .mask-wrap .icon-sq img {
-    width: 100%;
-  }
-  
-  .main_mlwrap {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 10;
-    color: #000;
-    display: none;
-  }
-  
-  .main_mlwrap .cover {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background: rgba(0, 0, 0, 0.5);
-  }
-  
-  .main_mlwrap .ml_list {
-    background: #fff;
-    z-index: 11;
-    width: 80%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    overflow: auto;
-  }
-  
-  
-  .main_mlwrap .ml_list div {
-    padding: 8vw 0;
-    border-bottom: 0.5vw solid #eaeaea;
-    margin: 0 8vw;
-  }
-  
-  .main_mlwrap .ml_list div.active {
-    color: #2ea2fc;
-  }
-  
-  /* main  */
-  
-  .main {
-    background: #fff;
-    width: 100%;
-    height: 100%;
-    padding-bottom: 13.3vw;
-  }
-  
-  .main_book_intro {
-    width: 100%;
-    color: #0d141e;
-    font-size: 4.3vw;
-    padding-top: 9.3vw;
-  }
-  
-  .main_book_intro .book_cover {
-    width: 45.2vw;
-    margin: 0 auto 5.9vw;
-  }
-  
-  .main_book_intro .book_cover img {
-    width: 100%;
-    box-shadow: 0 0 0.8vw #000;
-  }
-  
-  .main_book_intro .book_name {
-    color: #0d141e;
-    font-size: 6.1vw;
-    text-align: center;
-  }
-  
-  .main_book_intro .book_author {
-    margin: 3.7vw 0 5.3vw 0;
-    text-align: center;
-  }
-  
-  .main_book_intro .book_intro {
-    width: 94.7vw;
-    margin: 0 auto;
-  }
-  
-  .main_book_intro .book_intro .icon_unfold {
-    width: 6.4vw;
-    height: 2.7vw;
-    margin: 2.7vw auto 0;
-  }
-  
-  .main_book_intro .book_intro .icon_unfold img {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .main_piece {
-    width: 100%;
-    background: #fff;
-    margin-top: 6.7vw;
-    padding-bottom: 2.7vw;
-  }
-  
-  .main_piece > div {
-    width: 50%;
-    height: 14.7vw;
-    text-align: center;
-    box-sizing: border-box;
-  }
-  
-  .main_piece > div .txt {
-    font-size: 3.7vw;
-    color: #38414c;
-  }
-  
-  .main_piece > div:nth-child(2) .txt {
-    color: #fc344e;
-  }
-  
-  .main_piece > div .icon_ml {
-    margin: 3.7vw auto 1.6vw;
-    width: 4.3vw;
-  }
-  
-  .main_piece > div .icon_sign {
-    margin: 4vw auto 1.3vw;
-    width: 4.3vw;
-  }
-  
-  .main_nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 9;
-    width: 100%;
-  }
-  
-  .main_nav .nav_group {
-    width: 100%;
-    background: #fff;
-  }
-  
-  .main_nav .nav_group > div {
-    width: 30%;
-    height: 14.7vw;
-    text-align: center;
-    border-top: 0.3vw solid #efefef;
-    box-sizing: border-box;
-  }
-  
-  .main_nav .nav_group > div:nth-child(2) {
-    width: 40%;
-    background: #2ea2fc;
-    line-height: 14.7vw;
-  }
-  
-  .main_nav .nav_group > div .txt {
-    font-size: 3.2vw;
-    color: #2a313c;
-  }
-  
-  .main_nav .nav_group > div:nth-child(2) .txt {
-    font-size: 4.8vw;
-    color: #fff;
-  }
-  
-  .main_nav .nav_group > div .icon_myshuq {
-    margin: 2.7vw auto 0;
-    width: 4.8vw;
-  }
-  
-  .main_nav .nav_group > div .icon_myinfo {
-    margin: 2.7vw auto 0;
-    width: 3.7vw;
-  }
-  
-/********阅读小说************/
-  .book_con {
-    width: 100%;
-    height: 100%;
-    color: #000;
-    box-sizing: border-box;
-    font-size: 5.1vw;
-    padding: 0 5.3vw;
-  }
-  .book_con scroll-div{
-    width: 100%;
-    height: 100%;
-  }
-  
-  .book_con .book_tit {
-    font-size: 6.7vw;
-    padding-top: 6.7vw;
-  }
-  .book_con > p{
-    font-size: 5.1vw;
-    line-height: 10vw;
-  }
-  .book_con .footer_chapter{
-    width: 100%;
-  }
-  .book_con .footer_chapter > div{
-    width: 30%;
-    font-size: 4.3vw;
-    background: #fff;
-    border-radius: 1.3vw;
-    height: 9.6vw;
-    line-height: 9.6vw;
-    text-align: center;
-    margin: 5% 5% 5% 0;
-  }
-  .book_con .footer_chapter > div:last-of-type{
-    margin: 5% 0 5% 0;
-  }
-  .set_wrap {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    box-sizing: border-box;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-  }
-  
-  .set_wrap .cover {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-  
-  .set_wrap .set_con {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: 1;
-    background: #fff;
-    border-top: 0.3vw solid #efefef;
-  }
-  
-  .set_wrap .set_chapter {
-    width: 100%;
-    font-size: 4.3vw;
-  }
-  
-  .set_wrap .set_chapter > div {
-    width: 30%;
-    height: 20vw;
-    line-height: 20vw;
-  }
-  
-  .set_wrap .set_chapter > div:nth-child(2) {
-    width: 40%;
-    font-size: 3.5vw;
-    color: #7f7f7f;
-  }
-  
-  .set_wrap .nav_group {
-    width: 100%;
-  }
-  
-  .set_wrap .nav_group > div {
-    width: 30%;
-    box-sizing: border-box;
-  }
-  
-  .set_wrap .nav_group > div:nth-child(2) {
-    width: 40%;
-    font-size: 2.7vw;
-  }
-  
-  .set_wrap .nav_group > div:nth-child(2) .font_size {
-    width: 60%;
-    margin: 0 auto 1.1vw;
-  }
-  
-  .set_wrap .nav_group > div:nth-child(2) .font_size > div {
-    border-radius: 4vw;
-    border: 0.3vw solid #000;
-    padding: 0.5vw 1.9vw;
-  }
-  
-  .set_wrap .nav_group > div:nth-child(2) .font_size > div:nth-child(1) {
-    padding: 0.5vw 2.1vw;
-  }
-  
-  .set_wrap .nav_group > div .txt {
-    font-size: 2.7vw;
-    color: #2a313c;
-    padding-bottom: 1.3vw;
-  }
-  
-  .set_wrap .nav_group > div .icon_ml {
-    margin: 0 auto 0;
-    width: 4.3vw;
-  }
-  
-  .set_wrap .nav_group > div .icon_night {
-    margin: 0 auto 0;
-    width: 4.7vw;
-  }
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>首页</title>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+    <link href="css/swiper.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <style>
+    </style>
+</head>
+
+<body>
+    <!-- 签到 -->
+    <div class="layer">
+        <div class="layer_cover"></div>
+        <div class="layer_main">
+            <div class="layer_main_cover">
+                <img src='images/sign_bg.png' class="layer_main_cover_bgpic">
+                <div class="layer_content">
+                    <div class="total_day">已累计签到
+                        <span class="day_num">8 </span>天</div>
+                    <div class="sign_tip">签到多多，奖励多多</div>
+                    <div class="sign_day_list">
+                        <div class="has_day">
+                            <div class="day_num">1</div>
+                            <img src='images/sign_gold.png' class="sign_gold">
+                            <img src='images/sign_success.png' class="sign_success">
+                        </div>
+                        <div class="out_day">
+                            <div class="day_num">2</div>
+                            <img src='images/sign_gold.png' class="sign_gold">
+                            <div class="out_day_txt">漏签</div>
+                        </div>
+                        <div class="cur_day">
+                            <div class="day_num">3</div>
+                            <img src='images/sign_gold.png' class="sign_gold">
+                        </div>
+                        <div>
+                            <div class="day_num">4</div>
+                            <img src='images/sign_gold.png' class="sign_gold">
+                        </div>
+                        <div>
+                            <div class="day_num">5</div>
+                            <img src='images/sign_gold.png' class="sign_gold">
+                        </div>
+                        <div>
+                            <div class="day_num">6</div>
+                            <img src='images/sign_gold.png' class="sign_gold">
+                        </div>
+                        <div>
+                            <div class="day_num">7</div>
+                            <img src='images/sign_gold.png' class="sign_gold">
+                        </div>
+                    </div>
+                    <div>累计签到送大礼</div>
+                    <div class="total_day_list">
+                        <div>
+                            <div class="total_day_list_box">
+                                <img src='images/sign_quan.png' class="sign_quan">
+                                <div>100书券</div>
+                            </div>
+                            <div class="txt">已领取</div>
+                        </div>
+                        <div>
+                            <div class="total_day_list_box">
+                                <img src='images/sign_curquan.png' class="sign_quan">
+                                <div>100书券</div>
+                            </div>
+                            <div class="txt">已领取</div>
+                        </div>
+                        <div>
+                            <div class="total_day_list_box">
+                                <img src='images/sign_curquan.png' class="sign_quan">
+                                <div>100书券</div>
+                            </div>
+                            <div class="txt">已领取</div>
+                        </div>
+                        <div>
+                            <div class="total_day_list_box">
+                                <img src='images/sign_curquan.png' class="sign_quan">
+                                <div>100书券</div>
+                            </div>
+                            <div class="txt">已领取</div>
+                        </div>
+                    </div>
+                    <div class="layer_btn_group">
+                        <button bindtap="">立即签到</button>
+                    </div>
+                </div>
+            </div>
+            <a href="javascript:;" id="closeSign">
+                <img class="layer_close" src='images/sign_close.png'>
+            </a>
+        </div>
+    </div>
+    <!-- 目录 -->
+    <div class="main_mlwrap" catchtouchmove="myCatchTouch">
+        <div class="cover" onclick='closeMl()'></div>
+        <div class="ml_list animated">
+            <div class="active">第一章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第三章：死亡游戏</div>
+            <div>第四章：死亡游戏</div>
+            <div>第五章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+            <div>第二章：死亡游戏</div>
+        </div>
+    </div>
+    <!-- 内容 -->
+    <div class="main">
+        <div class="main_book_intro">
+            <div class="book_cover">
+                <img src='images/book_cover.png'>
+            </div>
+            <div class="book_name">暗界神使</div>
+            <div class="book_author">火红森林</div>
+            <div class="book_intro" onclick='unfold()'>
+                <span>大学毕业生姜爻在追查友人失踪案件中,意外得知自己本应在十年前就已死去的事实..</span>
+                <div class="icon_unfold">
+                    <img src='images/icon_unfold.png'>
+                </div>
+            </div>
+        </div>
+        <div class="main_piece clearfix">
+            <div class="fl" >
+                <a href="javascript:;" id="openMl">
+                    <img src='images/icon_ml.png' class="icon_ml">
+                    <div class="txt">查看目录</div>
+                </a>
+            </div>
+            <div class="fl" onclick="changFont(1)">
+                <img src='images/icon_sign.png' class="icon_sign">
+                <div class="txt">签到领书券</div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部导航 -->
+    <div class="main_nav">
+        <div class="nav_group clearfix">
+            <div class="fl">
+                <img src='images/icon_msg.png' class="icon_myshuq">
+                <div class="txt">我的书圈</div>
+            </div>
+            <div class="fl" id="goReadingBook">
+                <div class="txt">免费阅读</div>
+            </div>
+            <div class="fl" onclick="changFont(1)">
+                <img src='images/icon_user.png' class="icon_myinfo">
+                <div class="txt">个人中心</div>
+            </div>
+        </div>
+    </div>
+    <!-- <nav class="main_nav">
+        <div class="nav_group clearfix">
+            <a class="fl" onclick="changFont(0)">
+                <span class="icon icon_myshuq"></span>
+                <p>我的书圈</p>
+            </a>
+            <a class="fl ">
+                <p>目录</p>
+            </a>
+            <a class="fl" onclick="changFont(1)">
+                <span class="icon icon_myinfo"></span>
+                <p>个人中心</p>
+            </a>
+        </div>
+    </nav> -->
+    <!--     
+    <nav class="main_nav hide">
+        <div class="nav_group clearfix">
+            <a class="fl" onclick="changFont(0)">
+                <span class="icon icon_myshuq"></span>
+                <p>我的书圈</p>
+            </a>
+            <a class="fl openMenu">
+                <p>免费阅读</p>
+            </a>
+            <a class="fl" onclick="changFont(1)">
+                <span class="icon icon_myinfo"></span>
+                <p>个人中心</p>
+            </a>
+        </div>
+    </nav>
+    <nav id="menu" class="menu">
+        <a href="javascript:;">第一章 朝气蓬勃</a>
+        <a href="javascript:;">第二章 骨文</a>
+        <a href="javascript:;">第三章 祭灵</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+        <a href="javascript:;">第四章 药浴</a>
+    </nav>
+
+    <main id="panel" class="panel">
+        <section class="book_con">
+            <p>祭台以巨石砌成，很开阔，紧邻折断的老柳树而建，此时上面堆积满了猛兽，如同一座小山似的。</p>
+            <p>鲜红的兽血染红了巨石台，沿着石面上的刻图而淌，红艳艳，加之巨兽粗长的兽毛、寒光闪烁的鳞片以及狰狞的巨角等，触目惊心，有一种惨烈的洪荒气息扑面而来。</p>
+            <p>在老族长的带领下，石村的男女老少一起祷告，请求柳木庇护，这是一场严肃的祭祀过程，而这也是一种惯例，每次狩猎回来都要进行。</p>
+            <p>焦黑的树体如同过去一样寂静，并没有一点反应，一如往日不曾取用祭品，但是很多村人却知道，它有灵！</p>
+            <p>终于，祭祀完毕，人们都长出了一口气，重新浮上了喜悦的笑容，开始搬这些猛兽的尸体，准备去放血、切割。</p>
+            <p>“很多年了，祭灵都没有动过一次供品，还需要每次都进行祭祀吗？”一个少年小声咕哝。</p>
+            <p>“臭小子你乱说什么！”他的父亲怒瞪铜铃大眼，抡起蒲扇大的手就要揍他。</p>
+        </section>
+
+    </main> -->
+    <script src="js/zepto.js"></script>
+    <!-- 侧滑插件 -->
+    <!-- <script src="dist/slideout.min.js"></script> -->
+    <script type="text/javascript" src="js/common.js"></script>
+    <!-- <script type="text/javascript" src="js/rem.js"></script> -->
+    <!-- 侧滑插件 -->
+    <script>
+        function closeSign() {
+
+        }
+        $("#closeSign").on("touchend", function () {
+            $(".layer").hide()
+        })
+        $("#goReadingBook").on("touchend", function () {
+            window.location.href = 'readingbook.html'
+        })
+        function goReadingBook() {
+        }
+        function closeMl() {
+            $(".ml_list").removeClass("slideInLeft").addClass("slideOutLeft")
+            setTimeout(() => {
+                $(".main_mlwrap").hide()
+            }, 300);
+        }
+        $("#openMl").on("touchend", function () {
+            
+            $(".ml_list").addClass("slideInLeft").removeClass("slideOutLeft")
+            setTimeout(() => {
+                $(".main_mlwrap").show()
+            }, 300);
+        })
+        
+    </script>
+</body>
+
+</html>
