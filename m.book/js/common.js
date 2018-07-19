@@ -66,6 +66,7 @@ function unfold() {
 }
 function closeSign() {
     $(".layer").hide()
+    alert(1111)
 }
 function goReadingBook() {
     window.location.href = 'readingbook.html'
