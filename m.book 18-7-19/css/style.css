@@ -11,6 +11,9 @@ body{
 div,img,p{
   cursor:pointer;
 }
+img{
+  border: none;
+}
 .layer {
   position: fixed;
   top: 0;
