@@ -1,0 +1,17 @@
+.dark-box{
+  width: 100%;
+  height: 100%;
+}
+.dark-box .book_con {
+  background: #222224 !important;
+}
+.dark-box .book_con  .book_tit{
+  color: #868a8e !important;
+}
+.dark-box .book_con  p{
+  color:#868a8e !important;
+}
+.dark-box .book_con  .footer_chapter > div {
+  background: #56585a !important;
+  color: #b5bbc0 !important;
+}
