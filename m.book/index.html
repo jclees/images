@@ -94,7 +94,7 @@
                     </div>
                 </div>
             </div>
-            <img class="layer_close" src='images/sign_close.png' onclick='closeSign()'>
+            <img class="layer_close" src='images/sign_close.png' id="closeSign">
         </div>
     </div>
     <!-- 目录 -->
@@ -151,7 +151,7 @@
                 <img src='images/icon_msg.png' class="icon_myshuq">
                 <div class="txt">我的书圈</div>
             </div>
-            <div class="fl" onclick='goReadingBook()'>
+            <div class="fl" id="goReadingBook" >
                 <div class="txt">免费阅读</div>
             </div>
             <div class="fl" onclick="changFont(1)">
@@ -255,11 +255,16 @@
     <!-- 侧滑插件 -->
     <script>
 function closeSign() {
+    
+}
+$("#closeSign").on("touchend",function(){
     $(".layer").hide()
     alert(1111)
-}
-function goReadingBook() {
+})
+$("#goReadingBook").on("touchend",function(){
     window.location.href = 'readingbook.html'
+})
+function goReadingBook() {
 }
 function closeMl() {
     $(".ml_list").removeClass("slideInLeft").addClass("slideOutLeft")
