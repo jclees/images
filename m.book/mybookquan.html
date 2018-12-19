@@ -1,0 +1,697 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>我的书圈</title>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+    <link href="css/swiper.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" href="dist/mescroll.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <style>
+        /*ios使用sticky样式实现*/
+
+        .nav-sticky {
+            z-index: 9999;
+            /*需设置zIndex,避免在悬停时,可能会被列表数据遮住*/
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            /*相对mescroll的div悬停的位置*/
+        }
+
+        /*android和pc端悬停*/
+
+        .nav-fixed {
+            z-index: 9999;
+            position: fixed;
+            top: 44px;
+            left: 0;
+            width: 100%;
+        }
+
+        /*列表*/
+
+        .mescroll {
+            position: fixed;
+            top: 44px;
+            bottom: 0;
+            width: 100%;
+            height: auto;
+        }
+
+        /*展示上拉加载的数据列表*/
+
+        .data-list li {
+            position: relative;
+            padding: 10px 8px 10px 120px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .data-list .pd-img {
+            position: absolute;
+            left: 18px;
+            top: 18px;
+            width: 80px;
+            height: 80px;
+        }
+
+        .data-list .pd-name {
+            font-size: 16px;
+            line-height: 20px;
+            height: 40px;
+            overflow: hidden;
+        }
+
+        .data-list .pd-price {
+            margin-top: 8px;
+            color: red;
+        }
+
+        .data-list .pd-sold {
+            font-size: 12px;
+            margin-top: 8px;
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 查看评价弹框 -->
+    <div class="lookpl_wrap animated">
+        <div class="lookpl_top">
+
+            <div class="lookpl_list">
+                <div>
+                    <div class="pl_img fl">
+                        <img src="" alt="">
+                    </div>
+                    <div class="pl_right_box">
+                        <div class="pl_name">用户姓名</div>
+                        <p class="pl_con">111111111111111111</p>
+                        <div class="pl_fun">
+                            <div class="pl_time">2018年7月15日 12:32</div>
+                            <div class="pl_likenum fr active">
+                                <img src="images/icon_cur_like.png" alt="">
+                                <p>8868</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lookpl_bottom">
+            <div class="all_pl">全部评论</div>
+            <div class="lookpl_list">
+                <div>
+                    <div class="pl_img fl">
+                        <img src="" alt="">
+                    </div>
+                    <div class="pl_right_box">
+                        <div class="pl_name">用户姓名</div>
+                        <p class="pl_con">222222222222</p>
+                        <div class="pl_fun">
+                            <div class="pl_time">2018年7月15日 12:32</div>
+                            <div class="pl_likenum fr active">
+                                <img src="images/icon_cur_like.png" alt="">
+                                <p>8868</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="pl_img fl">
+                        <img src="" alt="">
+                    </div>
+                    <div class="pl_right_box">
+                        <div class="pl_name">用户姓名</div>
+                        <p class="pl_con">3333333333</p>
+                        <div class="pl_fun">
+                            <div class="pl_time">2018年7月15日 12:32</div>
+                            <div class="pl_likenum fr active">
+                                <img src="images/icon_cur_like.png" alt="">
+                                <p>8868</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="pl_img fl">
+                        <img src="" alt="">
+                    </div>
+                    <div class="pl_right_box">
+                        <div class="pl_name">用户姓名</div>
+                        <p class="pl_con">内容评论评论内容评论评论内容评论评论内容评论评论内容</p>
+                        <div class="pl_fun">
+                            <div class="pl_time">2018年7月15日 12:32</div>
+                            <div class="pl_likenum fr active">
+                                <img src="images/icon_cur_like.png" alt="">
+                                <p>8868</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="pl_img fl">
+                        <img src="" alt="">
+                    </div>
+                    <div class="pl_right_box">
+                        <div class="pl_name">用户姓名</div>
+                        <p class="pl_con">内容评论评论内容评论评论内容评论评论内容评论评论内容</p>
+                        <div class="pl_fun">
+                            <div class="pl_time">2018年7月15日 12:32</div>
+                            <div class="pl_likenum fr active">
+                                <img src="images/icon_cur_like.png" alt="">
+                                <p>8868</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="lookpl_num">3条回复
+        <div class="close_lookpl closeLookplWrap">
+            <img src="images/icon_closepl.png" alt="">
+        </div>
+    </div>
+    <div class="lookpl_plbtn openPlmsg" data-id="0">
+        <img src="images/icon_hf.png" alt="">
+        <p>我也说两句</p>
+    </div>
+
+    <!-- 查看文章弹框 -->
+    <div class="lookarticle_wrap animated">
+        <div class="lookpl_top">
+            <div class="lookpl_list">
+                <div class="lookpl_list">
+                    <div>
+                        <div class="pl_right_box">
+                            <div class="pl_img fl">
+                                <img src="" alt="">
+                            </div>
+                            <div class="pl_name">用户姓名</div>
+                            <div class="pl_time">2018年7月15日 12:32</div>
+                        </div>
+                        <div class="lookarticle_title">楚风一个人在旅行..</div>
+                        <p class="pl_con">楚风一个人在旅行，很疲惫，他躺在黄沙上，看着血色的夕阳， 不知道还要多久才能离开这片大漠。楚风一个人在旅行，很疲惫，他躺在黄沙上，看着血色的夕阳， 不知道还要多久才能离开这片大漠。楚风一个人在旅行，很疲惫，他躺在黄沙上，看着血色的夕阳，
+                            不知道还要多久才能离开这片大漠。楚风一个人在旅行，很疲惫，他躺在黄沙上，看着血色的夕阳， 不知道还要多久才能离开这片大漠。</p>
+                        <div class="clearfix">
+                            <div class="pl_likenum fr">
+                                <img src="images/icon_like.png" alt="">
+                                <p>8868</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lookpl_bottom">
+            <div class="lookpl_list">
+                <div>
+                    <div class="pl_img fl">
+                        <img src="" alt="">
+                    </div>
+                    <div class="pl_right_box">
+                        <div class="pl_name">用户姓名</div>
+                        <p class="pl_con">222222222222</p>
+                        <div class="pl_fun">
+                            <div class="pl_time">2018年7月15日 12:32</div>
+                            <div class="pl_likenum fr active">
+                                <img src="images/icon_cur_like.png" alt="">
+                                <p>8868</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="pl_img fl">
+                        <img src="" alt="">
+                    </div>
+                    <div class="pl_right_box">
+                        <div class="pl_name">用户姓名</div>
+                        <p class="pl_con">3333333333</p>
+                        <div class="pl_fun">
+                            <div class="pl_time">2018年7月15日 12:32</div>
+                            <div class="pl_likenum fr active">
+                                <img src="images/icon_cur_like.png" alt="">
+                                <p>8868</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="pl_img fl">
+                        <img src="" alt="">
+                    </div>
+                    <div class="pl_right_box">
+                        <div class="pl_name">用户姓名</div>
+                        <p class="pl_con">内容评论评论内容评论评论内容评论评论内容评论评论内容</p>
+                        <div class="pl_fun">
+                            <div class="pl_time">2018年7月15日 12:32</div>
+                            <div class="pl_likenum fr active">
+                                <img src="images/icon_cur_like.png" alt="">
+                                <p>8868</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="pl_img fl">
+                        <img src="" alt="">
+                    </div>
+                    <div class="pl_right_box">
+                        <div class="pl_name">用户姓名</div>
+                        <p class="pl_con">内容评论评论内容评论评论内容评论评论内容评论评论内容</p>
+                        <div class="pl_fun">
+                            <div class="pl_time">2018年7月15日 12:32</div>
+                            <div class="pl_likenum fr active">
+                                <img src="images/icon_cur_like.png" alt="">
+                                <p>8868</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="lookarticle_num">3条回复
+        <div class="close_lookpl closeLooktopicWrap">
+            <img src="images/icon_closepl.png" alt="">
+        </div>
+    </div>
+    <div class="lookarticle_plbtn openfbArticle" data-id="1">
+        <img src="images/icon_hf.png" alt="">
+        <p>我也说两句</p>
+    </div>
+
+    <!-- 评论消息弹窗 -->
+    <div class="plmsg_wrap" id="A">
+        <div class="cover closePlmsg"></div>
+        <div class="plmsg_con anim_plmsg_con animated">
+            <textarea autofocus name="" placeholder="回复 李某某 "></textarea>
+            <a href="javascript:;" class="plmsg_btn">发表</a>
+        </div>
+    </div>
+    <!-- 评论消息弹窗 -->
+    <div class="plmsg_wrap" id="B">
+        <div class="cover closePlmsg"></div>
+        <div class="plmsg_con anim_plmsg_con animated">
+            <textarea autofocus name="" placeholder="优质评论将会被优先展示"></textarea>
+            <a href="javascript:;" class="plmsg_btn">发表</a>
+        </div>
+    </div>
+    <!-- 评论竞猜互动弹窗 -->
+    <div class="plmsg_wrap plarticle_wrap">
+        <div class="cover closePlmsg"></div>
+        <div class="plmsg_con anim_plmsg_con animated">
+            <textarea autofocus name="" placeholder="评论 某某某"></textarea>
+            <a href="javascript:;" class="plmsg_btn">评论</a>
+        </div>
+    </div>
+    <!-- 发表文章弹窗 -->
+    <div class="fb_article_wrap">
+        <div class="cover closefbArticle"></div>
+        <div class="plmsg_con fb_article_con animated">
+            <div class="fb_article_title">发表内容
+                <div class="close_lookpl closefbArticle">
+                    <img src="images/icon_closepl.png" alt="">
+                </div>
+            </div>
+            <input type="text" placeholder="加个标题哟～">
+            <textarea name="" placeholder="来吧，尽情发挥吧..."></textarea>
+            <a href="javascript:;" class="plmsg_btn">发 表</a>
+        </div>
+    </div>
+    <!-- 浮动评论按钮 -->
+    <div class="fixed_hf fixed_hf_wrap openPlmsg" data-id="1">
+        <img src="images/icon_pl.png" alt="">
+        <p>评论</p>
+    </div>
+    <!-- 浮动发表按钮 -->
+    <div class="fixed_hf fixed_fb_wrap openfbArticle" data-id="0">
+        <img src="images/icon_fb.png" alt="">
+        <p>发表</p>
+    </div>
+    <!-- 主要内容 -->
+    <div class="main_bookquan">
+        <!-- 切换按钮 -->
+        <div class="bookq_tabs clearfix">
+            <a href="javascript:;" class="active">
+                <p>精彩评论</p>
+            </a>
+            <a href="javascript:;">
+                <p>竞猜互动</p>
+            </a>
+        </div>
+        <!-- 切换内容 -->
+        <div class="bookq_con">
+            <!-- 精彩评论内容 -->
+            <div class="pl_wrap">
+                <div>
+                    <div class="pl_img fl">
+                        <img src="" alt="">
+                    </div>
+                    <div class="pl_right_box">
+                        <div class="pl_name">用户姓名</div>
+                        <p class="pl_con openPlmsg mult_line_ellipsis" data-id="3">评论评论内容评论评论内容评论评论内容评论评论内容评论评论内容评论评论内容评论评论内容评论评论内容评论评论内容评论评论内容评论评论内容评论评论内容评论评论内容评论评论内容评论评论内容评论评论内容评论评论内容评论评论内容评论评论内容评论评论内容评论评论内容评论评论内容评论评论内容评论评论内容评论评论内容评论评论内容评论评论内容</p>
+                        <div class="pl_fun">
+                            <div class="pl_time">2018年7月15日 12:32</div>
+                            <div class="pl_likenum fr active">
+                                <img src="images/icon_cur_like.png" alt="">
+                                <p>8868</p>
+                            </div>
+                            <div class="pl_hf fr openPlmsg" data-id="3">
+                                <img src="images/icon_hf.png" alt="">
+                                <p>12</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="pl_img fl">
+                        <img src="" alt="">
+                    </div>
+                    <div class="pl_right_box">
+                        <div class="pl_name">用户姓名</div>
+                        <p class="pl_con openPlmsg" data-id="0">3333333</p>
+                        <div class="pl_fun">
+                            <div class="pl_time">2018年7月15日 12:32</div>
+                            <div class="pl_likenum fr">
+                                <img src="images/icon_like.png" alt="">
+                                <p>0</p>
+                            </div>
+                            <div class="pl_hf fr openPlmsg" data-id="0">
+                                <img src="images/icon_hf.png" alt="">
+                                <p>回复</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- 竞猜互动内容 -->
+            <div class="topic_wrap">
+                <div>
+                    <div class="pl_img fl">
+                        <img src="" alt="">
+                    </div>
+                    <div class="pl_right_box">
+                        <div class="pl_name">用户姓名</div>
+                        <div class="cool zuozhe">作者</div>
+                        <div class="cool hot">热门</div>
+                        <div class="cool up">置顶</div>
+                        <div class="pl_time">7月15日</div>
+                        <p class="pl_con openLooktopicWrap ellipsis">竞猜互动标题标题标题标题竞猜互动标题标题标题标题竞猜互动标题标题标题标题</p>
+                        <div class="pl_fun clearfix">
+                            <div class="pl_likenum fr">
+                                <img src="images/icon_like.png" alt="">
+                                <p>0</p>
+                            </div>
+                            <div class="pl_hf fr openLooktopicWrap">
+                                <img src="images/icon_hf.png" alt="">
+                                <p>12</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="pl_img fl">
+                        <img src="" alt="">
+                    </div>
+                    <div class="pl_right_box">
+                        <div class="pl_name">用户姓名</div>
+                        <div class="cool hot">热门</div>
+                        <div class="cool up">置顶</div>
+                        <div class="pl_time">7月15日</div>
+                        <p class="pl_con openLooktopicWrap">竞猜互动标题标题标题标题</p>
+                        <div class="pl_fun clearfix">
+                            <div class="pl_hf fr openLooktopicWrap">
+                                <img src="images/icon_hf.png" alt="">
+                                <p>12</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="pl_img fl">
+                        <img src="" alt="">
+                    </div>
+                    <div class="pl_right_box">
+                        <div class="pl_name">用户姓名</div>
+                        <div class="cool hot">热门</div>
+                        <div class="pl_time">7月15日</div>
+                        <p class="pl_con openLooktopicWrap">竞猜互动标题标题标题标题</p>
+                        <div class="pl_fun clearfix">
+                            <div class="pl_hf fr openLooktopicWrap">
+                                <img src="images/icon_hf.png" alt="">
+                                <p>12</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="dist/mescroll.js"></script>
+    <script src="js/jquery-1.8.0.min.js"></script>
+    <script>
+        $(function () {
+            //创建MeScroll对象,内部已默认开启下拉刷新,自动执行up.callback,刷新列表数据;
+            var mescroll = new MeScroll("body", { //id固定"body"
+                //上拉加载的配置项
+                up: {
+                    callback: getListData, //上拉回调,此处可简写; 相当于 callback: function (page) { getListData(page); }
+                    noMoreSize: 4, //如果列表已无数据,可设置列表的总数量要大于半页才显示无更多数据;避免列表数据过少(比如只有一条数据),显示无更多数据会不好看; 默认5
+                    empty: {
+                        icon: "../res/img/mescroll-empty.png", //图标,默认null
+                        tip: "暂无相关数据~", //提示
+                        btntext: "去逛逛 >", //按钮,默认""
+                        btnClick: function () {//点击按钮的回调,默认null
+                            alert("点击了按钮,具体逻辑自行实现");
+                        }
+                    },
+                    clearEmptyId: "dataList", //相当于同时设置了clearId和empty.warpId; 简化写法;默认null
+                    toTop: { //配置回到顶部按钮
+                        src: "../res/img/mescroll-totop.png", //默认滚动到1000px显示,可配置offset修改
+                        //html: null, //html标签内容,默认null; 如果同时设置了src,则优先取src
+                        //offset : 1000
+                    }
+                }
+            });
+
+            /*初始化菜单*/
+            var pdType = 0;//全部商品0; 奶粉1; 面膜2; 图书3;
+            $(".nav p").click(function () {
+                var i = $(this).attr("i");
+                if (pdType != i) {
+                    //更改列表条件
+                    pdType = i;
+                    $(".nav .active").removeClass("active");
+                    $(this).addClass("active");
+                    //重置列表数据
+                    mescroll.resetUpScroll();
+                }
+            })
+
+            /*联网加载列表数据  page = {num:1, size:10}; num:当前页 从1开始, size:每页数据条数 */
+            function getListData(page) {
+                //联网加载数据
+                getListDataFromNet(pdType, page.num, page.size, function (curPageData) {
+                    //联网成功的回调,隐藏下拉刷新和上拉加载的状态;
+                    //mescroll会根据传的参数,自动判断列表如果无任何数据,则提示空;列表无下一页数据,则提示无更多数据;
+                    console.log("pdType=" + pdType + ", page.num=" + page.num + ", page.size=" + page.size + ", curPageData.length=" + curPageData.length);
+
+                    //方法一(推荐): 后台接口有返回列表的总页数 totalPage
+                    //mescroll.endByPage(curPageData.length, totalPage); //必传参数(当前页的数据个数, 总页数)
+
+                    //方法二(推荐): 后台接口有返回列表的总数据量 totalSize
+                    //mescroll.endBySize(curPageData.length, totalSize); //必传参数(当前页的数据个数, 总数据量)
+
+                    //方法三(推荐): 您有其他方式知道是否有下一页 hasNext
+                    //mescroll.endSuccess(curPageData.length, hasNext); //必传参数(当前页的数据个数, 是否有下一页true/false)
+
+                    //方法四 (不推荐),会存在一个小问题:比如列表共有20条数据,每页加载10条,共2页.如果只根据当前页的数据个数判断,则需翻到第三页才会知道无更多数据,如果传了hasNext,则翻到第二页即可显示无更多数据.
+                    mescroll.endSuccess(curPageData.length);
+
+                    //设置列表数据
+                    setListData(curPageData);
+                }, function () {
+                    //联网失败的回调,隐藏下拉刷新和上拉加载的状态;
+                    mescroll.endErr();
+                });
+            }
+
+            /*设置列表数据*/
+            function setListData(curPageData) {
+                var listDom = document.getElementById("dataList");
+                for (var i = 0; i < curPageData.length; i++) {
+                    var pd = curPageData[i];
+
+                    var str = '<img class="pd-img" src="' + pd.pdImg + '"/>';
+                    str += '<p class="pd-name">' + pd.pdName + '</p>';
+                    str += '<p class="pd-price">' + pd.pdPrice + ' 元</p>';
+                    str += '<p class="pd-sold">已售' + pd.pdSold + '件</p>';
+
+                    var liDom = document.createElement("li");
+                    liDom.innerHTML = str;
+                    listDom.appendChild(liDom);
+                }
+            }
+
+			/*联网加载列表数据
+			 在您的实际项目中,请参考官方写法: http://www.mescroll.com/api.html#tagUpCallback
+			 请忽略getListDataFromNet的逻辑,这里仅仅是在本地模拟分页数据,本地演示用
+			 实际项目以您服务器接口返回的数据为准,无需本地处理分页.
+			 * */
+            function getListDataFromNet(pdType, pageNum, pageSize, successCallback, errorCallback) {
+                //延时一秒,模拟联网
+                setTimeout(function () {
+                    $.ajax({
+                        type: 'GET',
+                        url: '../res/pdlist1.json',
+                        //		                url: '../res/pdlist1.json?pdType='+pdType+'&num='+pageNum+'&size='+pageSize,
+                        dataType: 'json',
+                        success: function (data) {
+                            var listData = [];
+
+                            //pdType 全部商品0; 奶粉1; 面膜2; 图书3;
+                            if (pdType == 0) {
+                                //全部商品 (模拟分页数据)
+                                for (var i = (pageNum - 1) * pageSize; i < pageNum * pageSize; i++) {
+                                    if (i == data.length) break;
+                                    listData.push(data[i]);
+                                }
+
+                            } else if (pdType == 1) {
+                                //奶粉
+                                for (var i = 0; i < data.length; i++) {
+                                    if (data[i].pdName.indexOf("奶粉") != -1) {
+                                        listData.push(data[i]);
+                                    }
+                                }
+
+                            } else if (pdType == 2) {
+                                //面膜
+                                for (var i = 0; i < data.length; i++) {
+                                    if (data[i].pdName.indexOf("面膜") != -1) {
+                                        listData.push(data[i]);
+                                    }
+                                }
+
+                            } else if (pdType == 3) {
+                                //图书
+                                for (var i = 0; i < data.length; i++) {
+                                    if (data[i].pdName.indexOf("图书") != -1) {
+                                        listData.push(data[i]);
+                                    }
+                                }
+                            }
+
+                            //回调
+                            successCallback(listData);
+                        },
+                        error: errorCallback
+                    });
+                }, 1000)
+            }
+
+        });
+        // 打开发表评论弹框
+        $(".openPlmsg").on("click", function () {
+            var id = $(this).attr('data-id')
+            if (id == 0) {//0回复评论
+                $("#A .anim_plmsg_con").removeClass("slideOutDown").addClass("slideInUp")
+                setTimeout(() => {
+                    $("#A").show()
+                }, 300);
+            } else if (id == 1) {//浮动按钮发表评论
+                $("#B .anim_plmsg_con").removeClass("slideOutDown").addClass("slideInUp")
+                setTimeout(() => {
+                    $("#B").show()
+                }, 300);
+            } else if (id == 3) {
+                $(".lookpl_plbtn").slideDown()
+                $(".lookpl_wrap").removeClass("slideOutDown").addClass("slideInUp")
+                setTimeout(() => {
+                    $(".lookpl_wrap,.lookpl_num").show()
+                }, 300);
+            }
+
+        })
+        // 关闭发表评论弹框
+        $(".closePlmsg").on("click", function () {
+            $(".anim_plmsg_con").removeClass("slideInUp").addClass("slideOutDown")
+            setTimeout(() => {
+                $(".plmsg_wrap").hide()
+            }, 300);
+        })
+        // 关闭评论详情页
+        $(".closeLookplWrap").on("click", function () {
+            $(".lookpl_plbtn,.lookpl_num").hide()
+            $(".lookpl_wrap").removeClass("slideInUp").addClass("slideOutDown")
+            setTimeout(() => {
+                $(".lookpl_wrap").hide()
+            }, 300);
+        })
+
+        // 打开发表文章弹框
+        $(".openfbArticle").on("click", function () {
+            var id = $(this).attr('data-id')
+            if (id == 0) { //data-id等于0 发表文章弹窗
+                $(".fb_article_con").removeClass("slideOutDown").addClass("slideInUp")
+                setTimeout(() => {
+                    $(".fb_article_wrap").show()
+                }, 300);
+            } else if (id == 1) {//data-id等于1 评论文章弹窗
+                $(".plarticle_wrap .anim_plmsg_con").removeClass("slideOutDown").addClass("slideInUp")
+                setTimeout(() => {
+                    $(".plarticle_wrap").show()
+                }, 300);
+            }
+        })
+        // 关闭发表文章弹框
+        $(".closefbArticle").on("click", function () {
+            $(".fb_article_con").removeClass("slideInUp").addClass("slideOutDown")
+            setTimeout(() => {
+                $(".fb_article_wrap").hide()
+            }, 300);
+        })
+        // 打开文章详情页
+        $(".openLooktopicWrap").on("click", function () {
+            $(".lookarticle_plbtn").slideDown()
+            $(".lookarticle_wrap").removeClass("slideOutDown").addClass("slideInUp")
+            setTimeout(() => {
+                $(".lookarticle_wrap,.lookarticle_num").show()
+            }, 300);
+        })
+        // 关闭文章详情页
+        $(".closeLooktopicWrap").on("click", function () {
+            $(".lookarticle_plbtn,.lookarticle_num").hide()
+            $(".lookarticle_wrap").removeClass("slideInUp").addClass("slideOutDown")
+            setTimeout(() => {
+                $(".lookarticle_wrap").hide()
+            }, 300);
+        })
+        // 切换评论和文章
+        $(".bookq_tabs > a").on("click", function () {
+            var index = $(this).index()
+            $(this).addClass("active").siblings().removeClass("active")
+            $(".bookq_con > div").eq(index).show().siblings().hide()
+            if (index == 0) {
+                $(".fixed_hf_wrap").show()
+                $(".fixed_fb_wrap").hide()
+            } else {
+                $(".fixed_fb_wrap").show()
+                $(".fixed_hf_wrap").hide()
+            }
+        })
+    </script>
+</body>
+
+</html>

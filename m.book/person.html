@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>个人中心</title>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+    <link href="css/swiper.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <style>
+        body {
+            background: #f4f5f7;
+        }
+
+        .layer {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 签到 -->
+    <div class="layer animated">
+        <div class="layer_cover"></div>
+        <div class="layer_main">
+            <div class="layer_main_cover">
+                <img src='images/sign_bg.png' class="layer_main_cover_bgpic">
+                <div class="layer_content">
+                    <div class="total_day">已累计签到
+                        <span class="day_num">8 </span>天</div>
+                    <div class="sign_tip">签到多多，奖励多多</div>
+                    <div class="sign_day_list">
+                        <div class="has_day">
+                            <div class="day_num">1</div>
+                            <img src='images/sign_gold.png' class="sign_gold">
+                            <img src='images/sign_success.png' class="sign_success">
+                        </div>
+                        <div class="out_day">
+                            <div class="day_num">2</div>
+                            <img src='images/sign_gold.png' class="sign_gold">
+                            <div class="out_day_txt">漏签</div>
+                        </div>
+                        <div class="cur_day">
+                            <div class="day_num">3</div>
+                            <img src='images/sign_gold.png' class="sign_gold">
+                        </div>
+                        <div>
+                            <div class="day_num">4</div>
+                            <img src='images/sign_gold.png' class="sign_gold">
+                        </div>
+                        <div>
+                            <div class="day_num">5</div>
+                            <img src='images/sign_gold.png' class="sign_gold">
+                        </div>
+                        <div>
+                            <div class="day_num">6</div>
+                            <img src='images/sign_gold.png' class="sign_gold">
+                        </div>
+                        <div>
+                            <div class="day_num">7</div>
+                            <img src='images/sign_gold.png' class="sign_gold">
+                        </div>
+                    </div>
+                    <div>累计签到送大礼</div>
+                    <div class="total_day_list">
+                        <div>
+                            <div class="total_day_list_box">
+                                <img src='images/sign_quan.png' class="sign_quan">
+                                <div>100书券</div>
+                            </div>
+                            <div class="txt">已领取</div>
+                        </div>
+                        <div>
+                            <div class="total_day_list_box">
+                                <img src='images/sign_curquan.png' class="sign_quan">
+                                <div>100书券</div>
+                            </div>
+                            <div class="txt">已领取</div>
+                        </div>
+                        <div>
+                            <div class="total_day_list_box">
+                                <img src='images/sign_curquan.png' class="sign_quan">
+                                <div>100书券</div>
+                            </div>
+                            <div class="txt">已领取</div>
+                        </div>
+                        <div>
+                            <div class="total_day_list_box">
+                                <img src='images/sign_curquan.png' class="sign_quan">
+                                <div>100书券</div>
+                            </div>
+                            <div class="txt">已领取</div>
+                        </div>
+                    </div>
+                    <div class="layer_btn_group">
+                        <button class="signBtn">立即签到</button>
+                    </div>
+                </div>
+            </div>
+            <a href="javascript:;" class="closeSign">
+                <img class="layer_close" src='images/sign_close.png'>
+            </a>
+        </div>
+    </div>
+    <!-- 海报 -->
+    <div class="posters">
+        <div class="cover closePosters"></div>
+        <div class="posters_con animated">
+            <img src="images/posters.png" alt="" class="posters_cool">
+            <div class="tips_txt">长按图片保存海报看原著小说</div>
+        </div>
+    </div>
+    <!-- 分享送积分 -->
+    <div class="share_layer">
+        <div class="cover closeShare"></div>
+        <div class="share_con">
+            <img src="images/share_tips.png" alt="">
+        </div>
+    </div>
+    <!-- 签到成功弹框 -->
+    <div class="sign_success_wrap animated">
+        <div class="layer_cover"></div>
+        <div class="layer_main">
+            <div class="layer_main_cover">
+                <img src='images/sign_success_bg.png' class="layer_main_cover_bgpic">
+                <div class="layer_content">
+                    <div>累计签到送大礼</div>
+                    <div class="getjf">恭喜你获得20积分</div>
+                    <div class="layer_btn_group">
+                        <button class="closeSign">确定</button>
+                    </div>
+                </div>
+            </div>
+            <a href="javascript:;" class="closeSignSuccess">
+                <img class="layer_close" src='images/sign_close.png'>
+            </a>
+        </div>
+    </div>
+    <!-- 个人头像和名称 -->
+    <div class="person_topbar">
+        <img src="images/person_bg.png" alt="" class="cover">
+        <div class="topbar">
+            <div class="person_pic">
+                <img src="images/book_cover.png" alt="">
+            </div>
+            <div class="person_name">个人名称</div>
+        </div>
+    </div>
+    <!-- 积分书券 -->
+    <!-- <div class="topbar_piece clearfix">
+        <div>
+            <div class="num">300</div>
+            <div>书券</div>
+        </div>
+        <div>
+            <div class="num">690</div>
+            <div>积分</div>
+        </div>
+    </div> -->
+    <!-- 个人中心功能列表 -->
+    <div class="person_fun_list">
+        <div class="openIntegral">
+            <img src="images/icon_integral.png" alt="" class="icon icon_integral">
+            <div class="fun_txt">积分商城</div>
+            <div class="fun_txt jfnum">690</div>
+        </div>
+        <div class="openMessage">
+            <img src="images/icon_message.png" alt="" class="icon icon_message">
+            <div class="fun_txt">我的消息</div>
+        </div>
+        <div class="openDynamic">
+            <img src="images/icon_dynamic.png" alt="" class="icon icon_dynamic">
+            <div class="fun_txt">我的动态</div>
+        </div>
+        <div class="openPosters">
+            <img src="images/icon_wx.png" alt="" class="icon icon_wx">
+            <div class="fun_txt">微信公众号</div>
+        </div>
+        <div class="openShare">
+            <img src="images/icon_share.png" alt="" class="icon icon_share">
+            <div class="fun_txt">分享送积分</div>
+        </div>
+    </div>
+    <!-- <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> -->
+    <script src="js/jquery-1.8.0.min.js"></script>
+    <script>
+        $(".signBtn").on("click", function () {
+            $(".layer").hide()
+            $(".sign_success_wrap").show()
+            $(this).addClass('active')
+        })
+        $(".closeSignSuccess").on("click", function () {
+            $(".sign_success_wrap").hide()
+        })
+        $(".openIntegral").on("click", function () {
+            window.location.href = 'shop.html'
+        })
+        $(".openMessage").on("click", function () {
+            window.location.href = 'myMessage.html'
+        })
+        $(".openDynamic").on("click", function () {
+            window.location.href = 'myDynamic.html'
+        })
+        $(".openShare").on("click", function () {
+            $(".share_layer").show()
+        })
+        $(".closeShare").on("click", function () {
+            $(".share_layer").hide()
+        })
+        
+        $(".openSign").on("click", function () {
+            // $(".layer").addClass("fadeIn")
+            // setTimeout(() => {
+            $(".layer").show()
+            // }, 300);
+        })
+        $(".closeSign").on("click", function () {
+            // $(".layer").addClass("fadeOut")
+            // setTimeout(() => {
+            $(".layer").hide()
+            // }, 300);
+        })
+        $(".openPosters").on("click", function () {
+            $(".posters_con").removeClass("fadeOutDown").addClass("fadeInUp")
+            setTimeout(() => {
+                $(".posters").show()
+            }, 300);
+        })
+        $(".closePosters").on("click", function () {
+            $(".posters_con").removeClass("fadeInUp").addClass("fadeOutDown")
+            setTimeout(() => {
+                $(".posters").hide()
+            }, 300);
+        })
+    </script>
+</body>
+
+</html>

@@ -8,69 +8,83 @@
     <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
     <link href="css/swiper.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/dark.css" />
     <style>
-        body{
+        body {
             background: #f8f8f9;
+            overflow:auto;
+        }
+        .ml_list{
+            -webkit-overflow-scrolling : touch;
         }
     </style>
 </head>
 
 <body>
-    <div class="{{skinStyle}}-box">
-        <!-- <div class="set_wrap" wx:if="{{showSet}}">
-            <div class="cover" bindtap="closeSet"></div>
-            <div class="set_con animated {{showSet ? 'slideInUp' : 'slideOutDown'}}">
+    <!-- 返回首页 -->
+    <a href="index.html"><img src="images/icon_back_index.png" alt="" class="back_index"></a>
+    <div class="skin">
+        <div class="set_wrap">
+            <div class="cover closeSet"></div>
+            <div class="set_con animated">
                 <div class="set_chapter clearfix">
-                    <div class="fl" id="0" bindtap='changeChapter'>上一章</div>
+                    <div class="fl changeChapter" data-id="0">上一章</div>
                     <div class="fl">第一章：XXXXXXX</div>
-                    <div class="fl" id="1" bindtap='changeChapter'>下一章</div>
+                    <div class="fl changeChapter" data-id="1">下一章</div>
                 </div>
                 <div class="nav_group clearfix">
-                    <div class="fl" bindtap='openMl'>
+                    <div class="fl openMl">
                         <img src='images/icon_ml.png' class="icon_ml">
                         <div class="txt">目录</div>
                     </div>
                     <div class="fl">
                         <div class="font_size clearfix">
-                            <div class="fl" id="0" bindtap='changeFont'>A -</div>
-                            <div class="fr" id="1" bindtap='changeFont'>A +</div>
+                            <div class="fl changeFont" data-id="0">
+                                <img src='images/icon_font.png'>
+                            </div>
+                            <div class="fr changeFont" data-id="1">
+                                <img src='images/icon_font1.png'>
+                            </div>
                         </div>
                         <div class="txt">字号</div>
                     </div>
-                    <div class="fl" bindtap='changeNight'>
+                    <div class="fl night changeNight">
                         <img src='images/icon_night.png' class="icon_night">
                         <div class="txt">夜间</div>
                     </div>
+                    <div class="fl day changeNight">
+                        <img src='images/icon_day.png' class="icon_night">
+                        <div class="txt">日间</div>
+                    </div>
                 </div>
             </div>
-        </div> -->
-        <!-- <div class="main_mlwrap" wx:if="{{showMl}}" catchtouchmove="myCatchTouch">
-                  <div class="cover" bindtap='closeMl'></div>
-                  <div class="ml_list animated {{showMl ? 'slideInLeft' : 'slideOutLeft'}}">
-                    <scroll-div scroll-y>
-                      <div class="active">第一章：死亡游戏</div>
-                      <div>第二章：死亡游戏</div>
-                      <div>第二章：死亡游戏</div>
-                      <div>第二章：死亡游戏</div>
-                      <div>第二章：死亡游戏</div>
-                      <div>第二章：死亡游戏</div>
-                      <div>第二章：死亡游戏</div>
-                      <div>第二章：死亡游戏</div>
-                      <div>第三章：死亡游戏</div>
-                      <div>第四章：死亡游戏</div>
-                      <div>第五章：死亡游戏</div>
-                      <div>第二章：死亡游戏</div>
-                      <div>第二章：死亡游戏</div>
-                      <div>第二章：死亡游戏</div>
-                      <div>第二章：死亡游戏</div>
-                    </scroll-div>
-                  </div>
-                </div> -->
+        </div>
+        <!-- 目录 -->
+        <div class="main_mlwrap" catchtouchmove="myCatchTouch">
+            <div class="cover closeMl"></div>
+            <div class="ml_list animated">
+                <div class="active">第一章：死亡游戏</div>
+                <div>第二章：死亡游戏</div>
+                <div>第二章：死亡游戏</div>
+                <div>第二章：死亡游戏</div>
+                <div>第二章：死亡游戏</div>
+                <div>第二章：死亡游戏</div>
+                <div>第二章：死亡游戏</div>
+                <div>第二章：死亡游戏</div>
+                <div>第三章：死亡游戏</div>
+                <div>第四章：死亡游戏</div>
+                <div>第五章：死亡游戏</div>
+                <div>第二章：死亡游戏</div>
+                <div>第二章：死亡游戏</div>
+                <div>第二章：死亡游戏</div>
+                <div>第二章：死亡游戏</div>
+            </div>
+        </div>
         <div class="book_con">
             <div class="book_tit">第一章：死亡游戏</div>
-            <p bindtap="openSet">
+            <p class="openSet">
                 少年站在天桥下，紧张地看了眼一旁穿梭不息的车流，身体微微颤抖。 “别……别再发过来了……别……” 声声低语饱含着恐惧，从少年口中絮絮叨叨传来，只见少年的视线紧紧盯着手中的手机屏幕，似乎在祈求着什么。然而刚刚燃起的希望火苗很快再次湮灭，随着手机屏的再次亮起，一条新的指示随之而来。
                 【上天桥，到中央位置。】 少年的手顿时为之一抖，但即便内心极度抗拒，他的双腿仍不由自主地开始移动，朝着天桥正中的指定位置一步步走去。 自从开启了这场“死亡游戏”，他便没有了退出的可能。 一开始只是因为好奇，以为只是网络上的某种恶趣味游戏，但现实却是他已摆脱不了那魔鬼般的短信指示，即便换了手机号码、换了所有联系方式，阴影依然如影随形，逼迫着他伤害自己，牵引着他一步步走向深渊。
                 而且，没有任何拒绝的余地。 【跨过围栏。】 新的指示再次传来，在见到短信的那一刻，少年几乎快哭出来了。 “不……不要！！” 少年崩溃地大喊着，而他的右腿却仿佛无视了他的意志，直接跨上了天桥围栏。 “啪嗒——！”
@@ -100,19 +114,135 @@
                 姜爻抬起头，再次望向前方那栋沉默的别墅。 朦胧的月光映照出别墅二楼某扇漆黑的窗口，而在那窗口之后，却见一个娇小的身影正定在那里，冷漠地注视着自己。
             </p>
             <div class="footer_chapter clearfix">
-                <div class="fl" id="0" bindtap='changeChapter'>上一章</div>
-                <div class="fl" bindtap='openMl'>目录</div>
-                <div class="fl" id="1" bindtap='changeChapter'>下一章</div>
+                <div class="fl changeChapter" data-id='0'>上一章</div>
+                <div class="fl openMl">目录</div>
+                <div class="fl changeChapter" data-id='1'>下一章</div>
             </div>
-
         </div>
     </div>
-    <script src="js/zepto.js"></script>
-    <!-- 侧滑插件 -->
-    <script src="dist/slideout.min.js"></script>
-    <script type="text/javascript" src="js/common.js"></script>
-    <!-- <script type="text/javascript" src="js/rem.js"></script> -->
-    <!-- 侧滑插件 -->
+    <script src="js/jquery-1.8.0.min.js"></script>
+    <script src="js/zepto.min.js"></script>
+    <script>
+        var styleFlag = true;
+
+        var ModalHelper = (function (bodyCls) {
+            var scrollTop;
+            return {
+                afterOpen: function () {
+                    scrollTop = document.scrollingElement.scrollTop;
+                    document.body.classList.add(bodyCls);
+                    document.body.style.top = -scrollTop + 'px';
+                },
+                beforeClose: function () {
+                    document.body.classList.remove(bodyCls);
+                    // scrollTop lost after set position:fixed, restore it back.
+                    document.scrollingElement.scrollTop = scrollTop;
+                }
+            };
+        })('modal-open');
+        $(function () {
+            var oilgunTemp = window.localStorage.getItem("scrolltop");
+            // alert(oilgunTemp)
+            $("html, body").scrollTop(0).animate({ scrollTop: oilgunTemp + "px" });
+            // $(".skin").addClass("dark-box")
+            // $(".book_con > p").css("font-size", 12)
+            // if ($(".skin").hasClass("dark-box")) {
+            //     styleFlag = false
+            // } else {
+            //     styleFlag = true
+            // }
+        })
+        $(window).scroll(function () {
+            var scroll = $(window).scrollTop()
+            window.localStorage.setItem("scrolltop",scroll);
+        })
+
+        var flag = false;
+        var $selector = $('.openSet');
+
+        $selector.on('touchstart touchmove touchend', function (event) {
+            switch (event.type) {
+                case 'touchstart':
+                    falg = false;
+                    break;
+                case 'touchmove':
+                    falg = true;
+                    break;
+                case 'touchend':
+                    if (!falg) {
+                        $(".set_con").removeClass("slideOutDown").addClass("slideInUp")
+                        setTimeout(() => {
+                            $(".set_wrap").show()
+                        }, 300);
+                    } else {
+                        console.log('滑动');
+                    }
+                    break;
+            }
+        });
+
+        $(".openSet").on("touchend", function (e) {
+            console.log(e)
+
+        })
+        $(".closeSet").on("touchend", function () {
+            $(".set_con").removeClass("slideInUp").addClass("slideOutDown")
+            setTimeout(() => {
+                $(".set_wrap").hide()
+            }, 300);
+        })
+        $(".openMl").on("click", function () {
+            ModalHelper.afterOpen()
+            $(".ml_list").removeClass("slideOutLeft").addClass("slideInLeft")
+            setTimeout(() => {
+                $(".main_mlwrap").show()
+            }, 300);
+        })
+        $(".closeMl").on("click", function () {
+            ModalHelper.beforeClose()
+            $(".ml_list").removeClass("slideInLeft").addClass("slideOutLeft")
+            setTimeout(() => {
+                $(".main_mlwrap").hide()
+            }, 300);
+        })
+        $(".changeFont").on("click", function () {
+            var id = $(this).attr('data-id')
+            var thisEle = $(".book_con > p").css("font-size");
+            var textFontSize = parseFloat(thisEle, 10);
+            var unit = thisEle.slice(-2); //获取单位
+            if (id == 0) {
+                if (textFontSize == 12) {
+                    return false
+                }
+                textFontSize -= 2;
+
+            } else if (id == 1) {
+                if (textFontSize == 24) {
+                    return false
+                }
+                textFontSize += 2;
+            }
+            //设置para的字体大小
+            $(".book_con > p").css("font-size", textFontSize + unit)
+        })
+        $(".changeNight").on("click", function () {
+            if (styleFlag) {
+                $(".skin").addClass("dark-box")
+                $(".set_con").removeClass("slideInUp").addClass("slideOutDown")
+                setTimeout(() => {
+                    $(".set_wrap").hide()
+                }, 300);
+                styleFlag = false
+            } else {
+                $(".skin").removeClass("dark-box")
+                $(".set_con").removeClass("slideInUp").addClass("slideOutDown")
+                setTimeout(() => {
+                    $(".set_wrap").hide()
+                }, 300);
+                styleFlag = true
+            }
+        })
+    </script>
 </body>
 
 </html>

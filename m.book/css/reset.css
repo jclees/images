@@ -20,11 +20,16 @@ body{
     color: #666;
     font-family: "MicroSoft YaHei","sans-serif";/*是设备默认的字体*/
 }
+body.modal-open {
+    position: fixed;
+    width: 100%;
+}
 ul,ol{
     list-style: none;
 }
 img{
     display:block;
+    border: none;
 }
 a{
     text-decoration: none;
@@ -33,7 +38,7 @@ a{
 a:hover{
     color: #666;
 }
-input,textarea{
+input,textarea,button{
     border: none;
     outline: none;
     resize: none;
@@ -49,11 +54,24 @@ input,textarea{
 }
 .clearfix::after,
 .clearfix::before{
-    content: ".";
+    content: "";
     line-height: 0;
     height: 0;
     display: block;
     visibility: hidden;
     clear: both;
 }
+.ellipsis{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    width: 100%;
+  }
+  .mult_line_ellipsis{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
 .bord_b{border-bottom: 1px solid #ccc;}

@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>积分商城</title>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+    <link href="css/swiper.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <style>
+        body {
+            background: #f5f5fa;
+        }
+        .layer {
+            display: none;
+        }
+        .layer .layer_main{
+            bottom: 30%;
+        }
+        .sign_day_list{
+            width: 42vw;
+            text-align: left;
+            margin: 0 auto;
+            line-height: 7vw;
+        }
+        .layer_content{
+            padding-bottom: 10%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="layer animated">
+        <div class="layer_cover"></div>
+        <div class="layer_main">
+            <div class="layer_main_cover">
+                <div class="layer_content">
+                    <div class="sign_tip">积分攻略</div>
+                    <div class="sign_day_list">
+                            1.每天签到 + 10 积分</br> 2.小说评论 ＋10 积分 </br>3.书友互动 ＋10积分</br> 4.话题发表 ＋20 积分 </br>5.好书分享 ＋20积分
+                    </div>
+                </div>
+            </div>
+            <a href="javascript:;" class="closeJfglue">
+                <img class="layer_close" src='images/sign_close.png'>
+            </a>
+        </div>
+    </div>
+    <!-- 分享送积分 -->
+    <div class="share_layer">
+        <div class="cover closeShare"></div>
+        <div class="share_con">
+            <img src="images/share_tips.png" alt="">
+        </div>
+    </div>
+    <!-- 主要内容 -->
+    <div class="main_shop">
+        <div class="shop_top">
+            <div class="jf_num">86</div>
+            <div class="ky_jf">可用积分</div>
+            <div class="shop_top_func">
+                <a href="integralDetail.html">
+                    <img src="images/icon_integral.png" alt="">
+                    <div>积分明细</div>
+                </a>
+                <a href="integralRecord.html">
+                    <img src="images/icon_jfjl.png" alt="">
+                    <div>兑换记录</div>
+                </a>
+                <a href="javascript:;" class="openJfglue">
+                    <img src="images/icon_jfgl.png" alt="">
+                    <div>积分攻略</div>
+                </a>
+            </div>
+        </div>
+        <div class="pd_wrap clearfix">
+            <div>
+                <div class="pd_top">
+                    <div class="pd_top_img">
+                        <img src="images/a.png" alt="">
+                    </div>
+                    <div class="pd_top_intro">定制U盘</div>
+                    <div class="pd_top_jf">300积分</div>
+                </div>
+                <div class="pd_bot">
+                    <a href="address.html">立即兑换</a>
+                </div>
+            </div>
+            <div>
+                <div class="pd_top">
+                    <div class="pd_top_img">
+                        <img src="images/a.png" alt="">
+                    </div>
+                    <div class="pd_top_intro">定制U盘</div>
+                    <div class="pd_top_jf">300积分</div>
+                </div>
+                <div class="pd_bot">
+                    <a href="address.html">立即兑换</a>
+                </div>
+            </div>
+            <div>
+                <div class="pd_top">
+                    <div class="pd_top_img">
+                        <img src="images/a.png" alt="">
+                    </div>
+                    <div class="pd_top_intro">定制U盘</div>
+                    <div class="pd_top_jf">300积分</div>
+                </div>
+                <div class="pd_bot">
+                    <a href="address.html">立即兑换</a>
+                </div>
+            </div>
+            <div>
+                <div class="pd_top">
+                    <div class="pd_top_img">
+                        <img src="images/a.png" alt="">
+                    </div>
+                    <div class="pd_top_intro">定制U盘</div>
+                    <div class="pd_top_jf">300积分</div>
+                </div>
+                <div class="pd_bot">
+                    <a href="address.html">立即兑换</a>
+                </div>
+            </div>
+            <div>
+                <div class="pd_top">
+                    <div class="pd_top_img">
+                        <img src="images/a.png" alt="">
+                    </div>
+                    <div class="pd_top_intro">定制U盘</div>
+                    <div class="pd_top_jf">300积分</div>
+                </div>
+                <div class="pd_bot">
+                    <a href="address.html">立即兑换</a>
+                </div>
+            </div>
+            <div>
+                <div class="pd_top">
+                    <div class="pd_top_img">
+                        <img src="images/a.png" alt="">
+                    </div>
+                    <div class="pd_top_intro">定制U盘</div>
+                    <div class="pd_top_jf">300积分</div>
+                </div>
+                <div class="pd_bot">
+                    <a href="address.html">立即兑换</a>
+                </div>
+            </div>
+        </div>
+        <div class="pd_uptips">商城礼品不定期更新，现有礼品数量有限，先到先得</div>
+        <div class="share_btn">
+            <a href="javascript:;" class="openShare">分享</a>
+        </div>
+    </div>
+    <script src="js/jquery-1.8.0.min.js"></script>
+    <script>
+         var ModalHelper = (function (bodyCls) {
+            var scrollTop;
+            return {
+                afterOpen: function () {
+                    scrollTop = document.scrollingElement.scrollTop;
+                    document.body.classList.add(bodyCls);
+                    document.body.style.top = -scrollTop + 'px';
+                },
+                beforeClose: function () {
+                    document.body.classList.remove(bodyCls);
+                    // scrollTop lost after set position:fixed, restore it back.
+                    document.scrollingElement.scrollTop = scrollTop;
+                }
+            };
+        })('modal-open');
+        $(".openShare").on("click", function () {
+            ModalHelper.afterOpen()
+            $(".share_layer").show()
+        })
+        $(".closeShare").on("click", function () {
+            ModalHelper.beforeClose()
+            $(".share_layer").hide()
+        })
+        
+        $(".openJfglue").on("click", function () {
+            ModalHelper.afterOpen()
+            $(".layer").show()
+        })
+        $(".closeJfglue").on("click", function () {
+            ModalHelper.beforeClose()
+            $(".layer").hide()
+        })
+    </script>
+</body>
+
+</html>
