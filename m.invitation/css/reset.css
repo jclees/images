@@ -1,0 +1,77 @@
+/*reset css  重置默认的一些样式  浏览器子自带的  目的是保持各种终端显示一致*/
+/*所有的标签和伪类  before after*/
+*,
+::before,
+::after{
+    padding: 0;
+    margin: 0;
+    border:0;
+
+    /*在移动端特殊的设置*/
+    /*清除点击高亮效果*/
+    -webkit-tap-highlight-color: transparent;
+    /*设置所有的盒子的宽度以边框开始计算*/
+    -webkit-box-sizing: border-box;
+    /*要兼容 webkit 浏览器内核厂商 这种情况一般是老的移动端浏览器*/
+    box-sizing: border-box;
+}
+body{
+    font-size: 12px;
+    color: #666;
+    font-family: "MicroSoft YaHei","sans-serif";/*是设备默认的字体*/
+}
+body.modal-open {
+    position: fixed;
+    width: 100%;
+}
+ul,ol{
+    list-style: none;
+}
+img{
+    display:block;
+    border: none;
+}
+a{
+    text-decoration: none;
+    color: #666;
+}
+a:hover{
+    color: #666;
+}
+input,textarea,button{
+    border: none;
+    outline: none;
+    resize: none;
+    /*特殊的属性定义  清除浏览器给input自带的样式*/
+    -webkit-appearance: none;/*组件默认的样式空*/
+}
+/*common css  也就是我们公用的css*/
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.clearfix::after,
+.clearfix::before{
+    content: "";
+    line-height: 0;
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+.ellipsis{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    width: 100%;
+  }
+  .mult_line_ellipsis{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+.bord_b{border-bottom: 1px solid #ccc;}
