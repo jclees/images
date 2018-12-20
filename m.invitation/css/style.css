@@ -64,7 +64,7 @@ body {
   position: relative;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  /* display: none; */
+  display: none;
 }
 .page1{
 }
@@ -178,9 +178,9 @@ body {
 .page3_main{
   position: absolute;
   left: 50%;
-  top:20%; 
+  top:50%; 
   width: 100%;
-  transform: translate(-50%,0);
+  transform: translate(-50%,-50%);
 }
 .page3_main .txt{
   text-align: center;
@@ -243,7 +243,7 @@ body {
   transform: translate(0,-50%);
 }
 .page6_main{
-  top: 10%;
+  /* top: 10%; */
 }
 .page6_main .inp{
   border-bottom: 1px solid #999999;
