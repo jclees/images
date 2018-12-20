@@ -87,7 +87,17 @@
             </div>
         </div>
         <div class="page page3">
-            <button class="nextShow">333</button>
+            <div class="page3_main">
+                <img src="images/page3/tit1.png" alt="" class="auto_img">
+                <img src="images/page3/tit3.png" alt="" class="auto_img" style="padding-top: 6.7vw;">
+                <div class="txt">
+                    <p>2018.12月27日 8:00</p>
+                    <p>青岛金沙滩希尔顿酒店</p>
+                </div>
+                <a href="javascript:;">
+                    <img src="images/page3/btn.png" alt="" class="auto_img nextShow">
+                </a>
+            </div>
         </div>
         <div class="page page4">
             <div class="page4_main">
@@ -106,7 +116,7 @@
                     <p class="sw_txt sw_txt_intro">水之优雅</p>
                 </div>
                 <div class="btn_group">
-                    <a href="javascript:;">
+                    <a href="javascript:;" class="nextShow" data-page="6">
                         <img src="images/bot_btn_01.png" alt="" class="">
                     </a>
                     <a href="javascript:;" class="nextShow">
@@ -125,19 +135,49 @@
                 </div>
                 <img src="images/page5/txt.png" alt="" class="auto_img" style="padding-bottom: 2vw;">
                 <div class="btn_group">
-                    <a href="javascript:;" class="nextShow">
-                        <img src="images/bot_btn_01.png" alt="" class="aimg">
-                        <img src="images/bot_btn_01_act.png" alt="" class="bimg">
+                    <a href="javascript:;" class="nextShow" class="nextShow" data-page="6">
+                        <img src="images/bot_btn_01_act.png" alt="" class="img">
                     </a>
                     <a href="javascript:;" class="nextShow">
-                        <img src="images/bot_btn_02_act.png" alt="" class="aimg">
+                        <img src="images/bot_btn_02_act.png" alt="" class="img">
                     </a>
                 </div>
             </div>
         </div>
-        <div class="page page6"></div>
-        <div class="page page7"></div>
-        <!-- <div class="share">
+        <div class="page page6">
+            <div class="page3_main page6_main">
+                <img src="images/page3/tit1.png" alt="" class="auto_img">
+                <img src="images/page3/tit3.png" alt="" class="auto_img" style="padding-top: 6.7vw;">
+                <img src="images/page6/tit.png" alt="" class="auto_img" style="padding: 6vw 0 2vw 0;">
+                <input type="text" placeholder="点击输入姓名" class="inp">
+
+                <div class="txt">
+                    <p>2018.12月27日 8:00</p>
+                    <p>青岛金沙滩希尔顿酒店</p>
+                </div>
+                <a href="javascript:;">
+                    <img src="images/page6/btn.png" alt="" class="auto_img nextShow">
+                </a>
+            </div>
+        </div>
+        <div class="page page7">
+            <div class="page7_main">
+                <p class="tips">您的邀请函已生成！</p>
+                <div class="poster_box">
+                    <img src="images/hb.png" alt="" class="auto_img">
+                    <p class="tips">请长按图片保存邀请函</p>
+                </div>
+                <div class="btn_group">
+                    <a href="javascript:;" class="openShare">
+                        <img src="images/bot_btn_03.png" alt="" class="img">
+                    </a>
+                    <a href="javascript:;" class="nextShow" data-page="3">
+                        <img src="images/bot_btn_04.png" alt="" class="img">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="share">
             <div class="cover"></div>
             <div class="con">
                 <img src="images/share/arrow.png" alt="" class="auto_img">
@@ -145,7 +185,7 @@
                     <img src="images/share/btn.png" alt="" class="auto_img">
                 </a>
             </div>
-        </div> -->
+        </div>
         <a href="javascript:;" class="muc">
             <img src="images/muc.png" alt="">
         </a>
@@ -159,40 +199,6 @@
                 el: '.swiper-pagination',
             },
         });
-
-        //禁止下拉
-        var overscroll = function (el) {
-            el.addEventListener('touchstart', function () {
-                var top = el.scrollTop
-                    , totalScroll = el.scrollHeight
-                    , currentScroll = top + el.offsetHeight
-                //If we're at the top or the bottom of the containers
-                //scroll, push up or down one pixel.
-                //
-                //this prevents the scroll from "passing through" to
-                //the body.
-                if (top === 0) {
-                    el.scrollTop = 1
-                } else if (currentScroll === totalScroll) {
-                    el.scrollTop = top - 1
-                }
-            })
-            el.addEventListener('touchmove', function (evt) {
-                //if the content is actually scrollable, i.e. the content is long enough
-                //that scrolling can occur
-                if (el.offsetHeight < el.scrollHeight)
-                    evt._isScroller = true
-            })
-        }
-        overscroll(document.querySelector('.main'));
-        document.body.addEventListener('touchmove', function (evt) {
-            //In this case, the default behavior is scrolling the body, which
-            //would result in an overflow.  Since we don't want that, we preventDefault.
-            if (!evt._isScroller) {
-                evt.preventDefault()
-            }
-        })
-
 
         $(function () {
             var img = $("img");//首先获取所有的Img对象
@@ -211,9 +217,19 @@
             })
         })
         $(".nextShow").on('click', function () {
+            let page = $(this).attr("data-page");
+            if (page) {
+                debugger
+                $(".page" + page).show()
+                $(this).parents(".page").hide()
+                return
+            }
             $(this).parents(".page").hide().next().show()
             $(".muc").show()
         });
+        $(".openShare").on("click", function () {
+            $(".share").show()
+        })
         $(".cover").on("click", function () {
             $(".share").hide()
         })
