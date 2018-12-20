@@ -126,10 +126,11 @@
                 <img src="images/page5/txt.png" alt="" class="auto_img" style="padding-bottom: 2vw;">
                 <div class="btn_group">
                     <a href="javascript:;" class="nextShow">
-                        <img src="images/bot_btn_01_act.png" alt="" class="">
+                        <img src="images/bot_btn_01.png" alt="" class="aimg">
+                        <img src="images/bot_btn_01_act.png" alt="" class="bimg">
                     </a>
                     <a href="javascript:;" class="nextShow">
-                        <img src="images/bot_btn_02_act.png" alt="" class="">
+                        <img src="images/bot_btn_02_act.png" alt="" class="aimg">
                     </a>
                 </div>
             </div>
@@ -158,6 +159,41 @@
                 el: '.swiper-pagination',
             },
         });
+
+        //禁止下拉
+        var overscroll = function (el) {
+            el.addEventListener('touchstart', function () {
+                var top = el.scrollTop
+                    , totalScroll = el.scrollHeight
+                    , currentScroll = top + el.offsetHeight
+                //If we're at the top or the bottom of the containers
+                //scroll, push up or down one pixel.
+                //
+                //this prevents the scroll from "passing through" to
+                //the body.
+                if (top === 0) {
+                    el.scrollTop = 1
+                } else if (currentScroll === totalScroll) {
+                    el.scrollTop = top - 1
+                }
+            })
+            el.addEventListener('touchmove', function (evt) {
+                //if the content is actually scrollable, i.e. the content is long enough
+                //that scrolling can occur
+                if (el.offsetHeight < el.scrollHeight)
+                    evt._isScroller = true
+            })
+        }
+        overscroll(document.querySelector('.main'));
+        document.body.addEventListener('touchmove', function (evt) {
+            //In this case, the default behavior is scrolling the body, which
+            //would result in an overflow.  Since we don't want that, we preventDefault.
+            if (!evt._isScroller) {
+                evt.preventDefault()
+            }
+        })
+
+
         $(function () {
             var img = $("img");//首先获取所有的Img对象
             var num = 0;//定义一个变量，赋值给b标签用
