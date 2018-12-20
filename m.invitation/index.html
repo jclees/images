@@ -221,10 +221,11 @@
             if (page) {
                 debugger
                 $(".page" + page).show()
-                $(this).parents(".page").hide()
+                $(this).parents(".page").siblings().hide()
                 return
             }
-            $(this).parents(".page").hide().next().show()
+            $(".page").hide();
+            $(this).parents(".page").next().show()
             $(".muc").show()
         });
         $(".openShare").on("click", function () {
@@ -233,8 +234,8 @@
         $(".cover").on("click", function () {
             $(".share").hide()
         })
-        var page_le = $(".page").length;
-        var click_le = 1;
+        // var page_le = $(".page").length;
+        // var click_le = 1;
         // $(".page").on("click", function () {
         //     console.log(click_le)
         //     console.log(page_le)
@@ -244,11 +245,12 @@
         //     click_le++;
         //     $(this).hide().next().show();
         // })
-        $(".page1").on("click", function () {
-            $(this).hide().next().show();
-        })
+        // $(".page1").on("click", function () {
+        //     $(this).hide().next().show();
+        // })
         //滑动处理
         if ($('.page2').css('display')) {
+            debugger
             var startX, startY;
             document.addEventListener('touchstart', function (ev) {
                 startX = ev.touches[0].pageX;
