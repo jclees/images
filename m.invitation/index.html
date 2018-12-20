@@ -14,7 +14,7 @@
         .swiper-container {
             position: absolute;
             top: 10vw;
-            height: 48vw;
+            height: 46vw;
             width: 60%;
             left: 50%;
             transform: translate(-50%, 0);
@@ -31,6 +31,12 @@
             opacity: 1;
         }
 
+        .swiper-container-horizontal>.swiper-pagination-bullets,
+        .swiper-pagination-custom,
+        .swiper-pagination-fraction {
+            bottom: 0;
+        }
+
         .sw_txt {
             position: absolute;
             top: 57vw;
@@ -43,8 +49,17 @@
             text-shadow: 0px 0px 10px #2f8990, 0px 0px 10px #2f8990, 0px 0px 10px #2f8990, 0px 0px 10px #2f8990;
         }
 
+        .swiper-pagination-bullet {
+            width: 4px;
+            height: 4px;
+        }
+
+        .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+            margin: 0 2px;
+        }
+
         .sw_txt_intro {
-            top: 80vw;
+            top: 83vw;
             font-size: 20px;
         }
     </style>
@@ -52,7 +67,7 @@
 
 <body>
     <div class="main">
-        <!-- <div class="page page1 " style="display: block">
+        <!-- <div class="page page1 ">
             <div class="page1_main">
                 <div class="loading_box">
                     <img src="images/loading.png" alt="" class="auto_img img">
@@ -60,8 +75,8 @@
                 </div>
                 <p class="tips">loading...</p>
             </div>
-        </div> -->
-        <div class="page page2" style="display: block">
+        </div>
+        <div class="page page2">
             <div class="page2_main">
                 <div class="txt_box">
                     <p class="animated fadeInDown">从没想过改变世界</p>
@@ -98,19 +113,26 @@
                     <img src="images/page3/btn.png" alt="" class="auto_img nextShow">
                 </a>
             </div>
-        </div>
-        <div class="page page4">
+        </div> -->
+
+        <div class="page page4" style="display: block">
             <div class="page4_main">
                 <img src="images/page4/tit.png" alt="" class="page4_main_tit">
                 <div class="page4_swp">
                     <img src="images/page4/swiper_bg.png" alt="" class="page4_swp_bg">
-                    <div class="swiper-container">
+                    <div class="swiper-container banner1">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">Slide 1</div>
-                            <div class="swiper-slide">Slide 2</div>
-                            <div class="swiper-slide">Slide 3</div>
+                            <div class="swiper-slide">
+                                <img src="images/banner/1-1.png" alt="" class="auto_img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/banner/1-2.png" alt="" class="auto_img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/banner/1-3.png" alt="" class="auto_img">
+                            </div>
                         </div>
-                        <div class="swiper-pagination"></div>
+                        <div class="swiper-pagination spot1"></div>
                     </div>
                     <p class="sw_txt">向右滑动</p>
                     <p class="sw_txt sw_txt_intro">水之优雅</p>
@@ -125,7 +147,6 @@
                 </div>
             </div>
         </div>
-
         <div class="page page5">
             <div class="page5_main">
                 <img src="images/page5/tit.png" alt="" class="auto_img">
@@ -145,7 +166,78 @@
             </div>
         </div>
         <div class="page page6">
-            <div class="page3_main page6_main">
+            <div class="page4_main">
+                <img src="images/page4/tit.png" alt="" class="page4_main_tit">
+                <div class="page4_swp">
+                    <img src="images/page4/swiper_bg.png" alt="" class="page4_swp_bg">
+                    <div class="swiper-container banner2">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="images/banner/2-1.png" alt="" class="auto_img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/banner/2-2.png" alt="" class="auto_img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/banner/2-3.png" alt="" class="auto_img">
+                            </div>
+                        </div>
+                        <div class="swiper-pagination spot2"></div>
+                    </div>
+                    <p class="sw_txt">向右滑动</p>
+                    <p class="sw_txt sw_txt_intro">多重荣耀花落谁家</p>
+                </div>
+                <div class="btn_group">
+                    <a href="javascript:;" class="nextShow" data-page="6">
+                        <img src="images/bot_btn_01.png" alt="" class="">
+                    </a>
+                    <a href="javascript:;" class="nextShow">
+                        <img src="images/bot_btn_02.png" alt="" class="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="page page7">
+            <div class="page4_main">
+                <img src="images/page4/tit.png" alt="" class="page4_main_tit">
+                <div class="page4_swp">
+                    <img src="images/page4/swiper_bg.png" alt="" class="page4_swp_bg">
+                    <div class="swiper-container banner3">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="images/banner/3-1.png" alt="" class="auto_img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/banner/3-2.png" alt="" class="auto_img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/banner/3-3.png" alt="" class="auto_img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/banner/3-4.png" alt="" class="auto_img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/banner/3-5.png" alt="" class="auto_img">
+                            </div>
+                        </div>
+                        <div class="swiper-pagination spot3"></div>
+                    </div>
+                    <p class="sw_txt">向右滑动</p>
+                    <p class="sw_txt sw_txt_intro">全息5D沉浸启动</p>
+                </div>
+                <div class="btn_group">
+                    <a href="javascript:;" class="nextShow" data-page="6">
+                        <img src="images/bot_btn_01.png" alt="" class="">
+                    </a>
+                    <a href="javascript:;" class="nextShow">
+                        <img src="images/bot_btn_02.png" alt="" class="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="page page8">
+            <div class="page3_main page8_main">
                 <img src="images/page3/tit1.png" alt="" class="auto_img">
                 <img src="images/page3/tit3.png" alt="" class="auto_img" style="padding-top: 6.7vw;">
                 <img src="images/page6/tit.png" alt="" class="auto_img" style="padding: 6vw 0 2vw 0;">
@@ -160,8 +252,8 @@
                 </a>
             </div>
         </div>
-        <div class="page page7">
-            <div class="page7_main">
+        <div class="page page9">
+            <div class="page9_main">
                 <p class="tips">您的邀请函已生成！</p>
                 <div class="poster_box">
                     <img src="images/hb.png" alt="" class="auto_img">
@@ -186,19 +278,38 @@
                 </a>
             </div>
         </div>
-        <a href="javascript:;" class="muc">
+        <a href="javascript:;" class="muc close_music_div" onclick="pauseAuto()" style="display: block;">
             <img src="images/muc.png" alt="">
+        </a>
+        <a href="javascript:;" class="muc open_music_div" onclick="openmusic()" >
+            <img src="images/muc_act.png" alt="">
         </a>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <audio style="display:none; height: 0" id="bg-music" preload="auto" src="videos/bg_music_01.mp3" loop="loop"></audio>
+
+
+    <script src="js/jquery-1.8.0.min.js"></script>
     <script src="js/swiper/js/swiper.min.js"></script>
     <script>
-        var swiper = new Swiper('.swiper-container', {
-            pagination: {
-                el: '.swiper-pagination',
-            },
-        });
+        $(document).ready(function () {
+            var swiper1 = new Swiper('.banner1', {
+                pagination: {
+                    el: '.spot1',
+                },
+            });
+            var swiper2 = new Swiper('.banner2', {
+                pagination: {
+                    el: '.spot2',
+                },
+            });
+            var swiper3 = new Swiper('.banner3', {
+                pagination: {
+                    el: '.spot3',
+                },
+            });
+        })
+
 
         $(function () {
             var img = $("img");//首先获取所有的Img对象
@@ -226,7 +337,7 @@
             }
             $(".page").hide();
             $(this).parents(".page").next().show()
-            $(".muc").show()
+            $(".close_music_div").show()
         });
         $(".openShare").on("click", function () {
             $(".share").show()
@@ -249,52 +360,54 @@
         //     $(this).hide().next().show();
         // })
         //滑动处理
-        if ($('.page2').css('display')) {
-            debugger
-            var startX, startY;
-            document.addEventListener('touchstart', function (ev) {
-                startX = ev.touches[0].pageX;
-                startY = ev.touches[0].pageY;
-            }, false);
 
-            document.addEventListener('touchend', function (ev) {
-                var endX, endY;
-                endX = ev.changedTouches[0].pageX;
-                endY = ev.changedTouches[0].pageY;
-                var direction = GetSlideDirection(startX, startY, endX, endY);
-                switch (direction) {
-                    case 0:
-                        // alert("无操作");
-                        break;
-                    case 1:
-                        // 向上
-                        // alert("up");
-                        $(".page2").hide().next().show()
-                        break;
-                    case 2:
-                        // 向下
-                        // alert("down");
-                        break;
+        // if ($('.page2').css('display')) {
+        //     debugger
+        //     var startX, startY;
+        //     document.addEventListener('touchstart', function (ev) {
+        //         startX = ev.touches[0].pageX;
+        //         startY = ev.touches[0].pageY;
+        //     }, false);
 
-                    default:
-                }
-            }, false);
-        }
+        //     document.addEventListener('touchend', function (ev) {
+        //         var endX, endY;
+        //         endX = ev.changedTouches[0].pageX;
+        //         endY = ev.changedTouches[0].pageY;
+        //         var direction = GetSlideDirection(startX, startY, endX, endY);
+        //         switch (direction) {
+        //             case 0:
+        //                 // alert("无操作");
+        //                 break;
+        //             case 1:
+        //                 // 向上
+        //                 // alert("up");
+        //                 $(".page2").hide().next().show()
+        //                 break;
+        //             case 2:
+        //                 // 向下
+        //                 // alert("down");
+        //                 break;
 
-        function GetSlideDirection(startX, startY, endX, endY) {
-            var dy = startY - endY;
-            //var dx = endX - startX;
-            var result = 0;
-            if (dy > 0) {//向上滑动
-                result = 1;
-            } else if (dy < 0) {//向下滑动
-                result = 2;
-            }
-            else {
-                result = 0;
-            }
-            return result;
-        }
+        //             default:
+        //         }
+        //     }, false);
+        //     function GetSlideDirection(startX, startY, endX, endY) {
+        //         var dy = startY - endY;
+        //         //var dx = endX - startX;
+        //         var result = 0;
+        //         if (dy > 0) {//向上滑动
+        //             result = 1;
+        //         } else if (dy < 0) {//向下滑动
+        //             result = 2;
+        //         }
+        //         else {
+        //             result = 0;
+        //         }
+        //         return result;
+        //     }
+        // }
+
+
 
         /*
     *坠落效果
@@ -393,6 +506,62 @@
     // }
     // var falling = new Falling();
     // falling.init();
+    </script>
+    <script>
+        //音乐自动播放
+        $(document).ready(function () {
+            autoPlayMusic();
+            audioAutoPlay();
+        });
+
+        function openmusic() {
+            autoPlayMusic();
+            audioAutoPlay();
+            $(".close_music_div").css({ "display": "block" });
+            $(".open_music_div").css({ "display": "none" });
+        }
+
+        function pauseAuto() {
+            var audio = document.getElementById('bg-music');
+            audio.pause();
+            $(".close_music_div").css({ "display": "none" });
+            $(".open_music_div").css({ "display": "block" });
+        }
+
+        function audioAutoPlay() {
+            var audio = document.getElementById('bg-music');
+            audio.play();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                audio.play();
+            }, false);
+        }
+        // 音乐播放
+        function autoPlayMusic() {
+            // 自动播放音乐效果，解决浏览器或者APP自动播放问题
+            function musicInBrowserHandler() {
+                musicPlay(true);
+                document.body.removeEventListener('touchstart', musicInBrowserHandler);
+            }
+            document.body.addEventListener('touchstart', musicInBrowserHandler);
+            // 自动播放音乐效果，解决微信自动播放问题
+            function musicInWeixinHandler() {
+                musicPlay(true);
+                document.addEventListener("WeixinJSBridgeReady", function () {
+                    musicPlay(true);
+                }, false);
+                document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+            }
+            document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+        }
+        function musicPlay(isPlay) {
+            var media = document.querySelector('#bg-music');
+            if (isPlay && media.paused) {
+                media.play();
+            }
+            if (!isPlay && !media.paused) {
+                media.pause();
+            }
+        }
     </script>
 </body>
 

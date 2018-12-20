@@ -80,10 +80,10 @@ body {
 .page5{
   background-image: url(../images/page_bg_04.png);
 }
-.page6{
+.page8{
   background-image: url(../images/page_bg_03.png);
 }
-.page7{
+.page9{
   background-image: url(../images/page_bg_04.png);
 }
 
@@ -242,10 +242,10 @@ body {
   top: 50%;
   transform: translate(0,-50%);
 }
-.page6_main{
+.page8_main{
   /* top: 10%; */
 }
-.page6_main .inp{
+.page8_main .inp{
   border-bottom: 1px solid #999999;
   background: transparent;
   text-align: center;
@@ -256,26 +256,26 @@ body {
   line-height: 32px;
   width: 32%;
 }
-.page6_main .txt{
+.page8_main .txt{
   padding: 9.3vw 0 10vw 0;
 }
-.page7_main{
+.page9_main{
   position: absolute;
   left: 50%;
   top:50%; 
   width: 100%;
   transform: translate(-50%,-50%);
 }
-.page7_main .tips{
+.page9_main .tips{
   text-align: center;
   color: #fff;
   font-size: 18px;
   padding:0 0 2vw 0;
 }
-.page7_main .poster_box{
+.page9_main .poster_box{
   position: relative;
 }
-.page7_main .poster_box .tips{
+.page9_main .poster_box .tips{
   color: #cccccc;
   font-size: 14px;
   position: absolute;
