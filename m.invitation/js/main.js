@@ -97,7 +97,7 @@ $(".nextShow").on('click', function () {
 				el: '.spot1',
 			  },
 			on: {
-				slideChangeTransitionEnd: function () {
+				slideChangeTransitionStart: function () {
 					// alert(this.activeIndex);//切换结束时，告诉我现在是第几个slide
 					$(".banner1 .tvgif").addClass("tvoldOpacityChange").css("z-index",200)
 					setTimeout(() => {
@@ -113,7 +113,7 @@ $(".nextShow").on('click', function () {
 				el: '.spot2',
 			  },
 			on: {
-				slideChangeTransitionEnd: function () {
+				slideChangeTransitionStart: function () {
 					// alert(this.activeIndex);//切换结束时，告诉我现在是第几个slide
 					$(".banner2 .tvgif").addClass("tvoldOpacityChange").css("z-index",200)
 					setTimeout(() => {
@@ -129,7 +129,7 @@ $(".nextShow").on('click', function () {
 				el: '.spot3',
 			  },
 			on: {
-				slideChangeTransitionEnd: function () {
+				slideChangeTransitionStart: function () {
 					// alert(this.activeIndex);//切换结束时，告诉我现在是第几个slide
 					$(".banner3 .tvgif").addClass("tvoldOpacityChange").css("z-index",200)
 					setTimeout(() => {
