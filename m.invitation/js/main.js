@@ -40,33 +40,33 @@ imgurl.concat(bgimgurl)
 var callbacks = [];
 imgLoader(imgurl, function (percentage) {
 	// debugger
-	var percentT = percentage * 100;
-	$('.loading_box .txt').html((parseInt(percentT)) + '%');
-	if (percentage == 1) {
-		$('.page1').hide().next().show();
-	}
-
-	// var i = callbacks.length;
-	// callbacks.push(function () {
-	// 	setTimeout(function () {
-	// 		var percentT = percentage * 100;
-	// 		$('.loading_box .txt').html((parseInt(percentT)) + '%');
-	// 		if (percentage == 1) {
-	// 			setTimeout(function () {
-	// 				$('.page1').hide().next().show();
-	// 				setTimeout(function () {
-	// 					$(".page2_arrow").removeClass("animated fadeInDown").addClass("p2_arrow");
-	// 					$(".page2_arrow").attr("style", "");
-	// 				}, 19000)
-	// 			}, 100);
-	// 		}
-	// 		callbacks[i + 1] && callbacks[i + 1]();
-	// 	}, 100);
-	// });
-
+	// var percentT = percentage * 100;
+	// $('.loading_box .txt').html((parseInt(percentT)) + '%');
 	// if (percentage == 1) {
-	// 	callbacks[0]();
+	// 	$('.page1').hide().next().show();
 	// }
+
+	var i = callbacks.length;
+	callbacks.push(function () {
+		setTimeout(function () {
+			var percentT = percentage * 100;
+			$('.loading_box .txt').html((parseInt(percentT)) + '%');
+			if (percentage == 1) {
+				setTimeout(function () {
+					$('.page1').hide().next().show();
+					setTimeout(function () {
+						$(".page2_arrow").removeClass("animated fadeInDown").addClass("p2_arrow");
+						$(".page2_arrow").attr("style", "");
+					}, 19000)
+				}, 100);
+			}
+			callbacks[i + 1] && callbacks[i + 1]();
+		}, 100);
+	});
+
+	if (percentage == 1) {
+		callbacks[0]();
+	}
 
 });
 
