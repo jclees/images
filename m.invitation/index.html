@@ -106,25 +106,25 @@
             <div class="page2_main">
                 <div class="txt_box">
                     <p class="animated fadeInDown" style="animation-delay: .4s;">从没想过改变世界</p>
-                    <p class="animated fadeInDown" style="animation-delay: 1.2s;">世界却因为”我们“</p>
-                    <p class="animated fadeInDown" style="animation-delay: 2s;">开始变得不一样</p>
+                    <p class="animated fadeInDown" style="animation-delay: 2s;">世界却因为”我们“</p>
+                    <p class="animated fadeInDown" style="animation-delay: 3s;">开始变得不一样</p>
                 </div>
                 <div class="txt_box txt_box_2">
-                    <p class="animated fadeInDown" style="animation-delay: 3.2s;">从没想过预测未来</p>
-                    <p class="animated fadeInDown" style="animation-delay: 4s;">”我们“却成为了</p>
-                    <p class="animated fadeInDown" style="animation-delay: 4.8s;">未来的掌舵人</p>
+                    <p class="animated fadeInDown" style="animation-delay: 5s;">从没想过预测未来</p>
+                    <p class="animated fadeInDown" style="animation-delay: 6.5s;">”我们“却成为了</p>
+                    <p class="animated fadeInDown" style="animation-delay: 7.5s;">未来的掌舵人</p>
                 </div>
                 <div class="txt_box txt_box_3">
-                    <p class="animated fadeInDown" style="animation-delay: 5.6s;">聚集在一起</p>
-                    <p class="animated fadeInDown" style="animation-delay: 6.4s;">就能释放强大的能量</p>
+                    <p class="animated fadeInDown" style="animation-delay: 9.5s;">聚集在一起</p>
+                    <p class="animated fadeInDown" style="animation-delay: 10.5s;">就能释放强大的能量</p>
                 </div>
                 <div class="txt_box txt_box_4">
-                    <p class="animated fadeInDown" style="animation-delay: 7.2s;">用野心和坚持 </p>
-                    <p class="animated fadeInDown" style="animation-delay: 8s;">一次又一次刷新着</p>
-                    <p class="animated fadeInDown" style="animation-delay: 8.8s;">我们的”净彩“</p>
+                    <p class="animated fadeInDown" style="animation-delay: 12.5s;">用野心和坚持 </p>
+                    <p class="animated fadeInDown" style="animation-delay: 13.5s;">一次又一次刷新着</p>
+                    <p class="animated fadeInDown" style="animation-delay: 14.5s;">我们的”净彩“</p>
                 </div>
-                <img src="images/page2/tit.png" alt="" class="page2_main_tit animated fadeInLeft" style="animation-delay: 9.6s;">
-                <img src="images/page2/arrow.png" alt="" class="page2_arrow animated fadeInDown" style="animation-delay: 10.4s;">
+                <img src="images/page2/tit.png" alt="" class="page2_main_tit animated fadeInLeft" style="animation-delay: 16.5s;">
+                <img src="images/page2/arrow.png" alt="" class="page2_arrow animated fadeInDown" style="animation-delay: 18.5s;">
             </div>
         </div>
         <div class="page page3 animated">
@@ -166,7 +166,7 @@
                 <div class="btn_group">
                     <a href="javascript:;" class="nextShow" data-page="8">
                         <img src="images/bot_btn_01.png" alt="" class="">
-                        <!-- <img src="images/012.png" alt="" class="shadow_an"> -->
+                        <img src="images/012.png" alt="" class="shadow_an">
                     </a>
                     <a href="javascript:;" class="nextShow">
                         <img src="images/bot_btn_02.png" alt="" class="">
@@ -340,10 +340,6 @@
                 el: '.spot4',
             },
         });
-        setTimeout(function () {
-            $(".page2_arrow").removeClass("animated fadeInDown").addClass("p2_arrow");
-            $(".page2_arrow").attr("style", "");
-        }, 12000)
 
 
         var imgurl = [];
@@ -354,17 +350,41 @@
         imgurl.concat(bgimgurl)
         var callbacks = [];
         imgLoader(imgurl, function (percentage) {
-            var percentT = percentage * 100;
-            $('.loading_box .txt').html((parseInt(percentT)) + '%');
+            // debugger
+            // var percentT = percentage * 100;
+            // $('.loading_box .txt').html((parseInt(percentT)) + '%');
+            // if (percentage == 1) {
+            //     $('.page1').hide().next().show();
+            // }
+
+            var i = callbacks.length;
+            callbacks.push(function () {
+                setTimeout(function () {
+                    var percentT = percentage * 100;
+                    $('.loading_box .txt').html((parseInt(percentT)) + '%');
+                    if (percentage == 1) {
+                        setTimeout(function () {
+                            $('.page1').hide().next().show();
+                            setTimeout(function () {
+                                $(".page2_arrow").removeClass("animated fadeInDown").addClass("p2_arrow");
+                                $(".page2_arrow").attr("style", "");
+                            }, 19000)
+                        }, 100);
+                    }
+                    callbacks[i + 1] && callbacks[i + 1]();
+                }, 100);
+            });
+
             if (percentage == 1) {
-                $('.page1').hide().next().show();
+                callbacks[0]();
             }
+
         });
 
 
-        // setInterval(function () {
-        //     $(".shadow_an").css({ opacity: '0' }).animate({ opacity: '1' }, "normal", "linear");
-        // }, 1500)
+        setInterval(function () {
+            $(".shadow_an").css({ opacity: '0' }).animate({ opacity: '1' }, "normal", "linear");
+        }, 1500)
 
 
         $(".nextShow").on('click', function () {
@@ -586,9 +606,9 @@
      // },1000)
     </script>
     <script>
-        
 
-        
+
+
     </script>
 </body>
 
