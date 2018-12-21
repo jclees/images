@@ -166,6 +166,13 @@ body {
 }
 .page2_main .page2_arrow{
   width: 100%;
+  /* animation: p2_arrow 1.5s infinite; */
+}
+.page2_main .page2_arrow.p2_arrow{
+  animation: p2_arrow 1.5s infinite;
+  -webkit-animation: p2_arrow 1.5s infinite;
+  -moz-animation: p2_arrow 1.5s infinite;
+  -o-animation: p2_arrow 1.5s infinite;
   animation: p2_arrow 1.5s infinite;
 }
 

@@ -68,6 +68,26 @@
             left: 0;
             top: 0;
         }
+
+        ::-webkit-input-placeholder {
+            /* WebKit, Blink, Edge */
+            color: #fff;
+        }
+
+        :-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            color: #fff;
+        }
+
+        ::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+            color: #fff;
+        }
+
+        :-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: #fff;
+        }
     </style>
 </head>
 
@@ -85,26 +105,26 @@
         <div class="page page2">
             <div class="page2_main">
                 <div class="txt_box">
-                    <p class="animated fadeInDown">从没想过改变世界</p>
-                    <p class="animated fadeInDown">从没想过改变世界</p>
-                    <p>从没想过改</p>
+                    <p class="animated fadeInDown" style="animation-delay: .4s;">从没想过改变世界</p>
+                    <p class="animated fadeInDown" style="animation-delay: 1.2s;">世界却因为”我们“</p>
+                    <p class="animated fadeInDown" style="animation-delay: 2s;">开始变得不一样</p>
                 </div>
                 <div class="txt_box txt_box_2">
-                    <p>从没想过改变世界</p>
-                    <p>从没想过改变世界</p>
-                    <p>从没想过改</p>
+                    <p class="animated fadeInDown" style="animation-delay: 3.2s;">从没想过预测未来</p>
+                    <p class="animated fadeInDown" style="animation-delay: 4s;">”我们“却成为了</p>
+                    <p class="animated fadeInDown" style="animation-delay: 4.8s;">未来的掌舵人</p>
                 </div>
                 <div class="txt_box txt_box_3">
-                    <p>从没想过改变世界</p>
-                    <p>从没想过改变世界</p>
+                    <p class="animated fadeInDown" style="animation-delay: 5.6s;">聚集在一起</p>
+                    <p class="animated fadeInDown" style="animation-delay: 6.4s;">就能释放强大的能量</p>
                 </div>
                 <div class="txt_box txt_box_4">
-                    <p>从没想过改变世界</p>
-                    <p>从没想过改变世界</p>
-                    <p>从没想过改变世界</p>
+                    <p class="animated fadeInDown" style="animation-delay: 7.2s;">用野心和坚持 </p>
+                    <p class="animated fadeInDown" style="animation-delay: 8s;">一次又一次刷新着</p>
+                    <p class="animated fadeInDown" style="animation-delay: 8.8s;">我们的”净彩“</p>
                 </div>
-                <img src="images/page2/tit.png" alt="" class="page2_main_tit">
-                <img src="images/page2/arrow.png" alt="" class="page2_arrow">
+                <img src="images/page2/tit.png" alt="" class="page2_main_tit animated fadeInLeft" style="animation-delay: 9.6s;">
+                <img src="images/page2/arrow.png" alt="" class="page2_arrow animated fadeInDown" style="animation-delay: 10.4s;">
             </div>
         </div>
         <div class="page page3 animated">
@@ -144,7 +164,7 @@
                     <p class="sw_txt sw_txt_intro">水之优雅</p>
                 </div>
                 <div class="btn_group">
-                    <a href="javascript:;" class="nextShow" data-page="6">
+                    <a href="javascript:;" class="nextShow" data-page="8">
                         <img src="images/bot_btn_01.png" alt="" class="">
                         <img src="images/012.png" alt="" class="shadow_an">
                     </a>
@@ -163,7 +183,7 @@
                 </div>
                 <img src="images/page5/txt.png" alt="" class="auto_img" style="padding-bottom: 2vw;">
                 <div class="btn_group">
-                    <a href="javascript:;" class="nextShow" data-page="6">
+                    <a href="javascript:;" class="nextShow" data-page="8">
                         <img src="images/bot_btn_01_act.png" alt="" class="img">
                     </a>
                     <a href="javascript:;" class="nextShow">
@@ -195,7 +215,7 @@
                     <p class="sw_txt sw_txt_intro">多重荣耀花落谁家</p>
                 </div>
                 <div class="btn_group">
-                    <a href="javascript:;" class="nextShow" data-page="6">
+                    <a href="javascript:;" class="nextShow" data-page="8">
                         <img src="images/bot_btn_01.png" alt="" class="">
                     </a>
                     <a href="javascript:;" class="nextShow">
@@ -233,7 +253,7 @@
                     <p class="sw_txt sw_txt_intro">全息5D沉浸启动</p>
                 </div>
                 <div class="btn_group">
-                    <a href="javascript:;" class="nextShow" data-page="6">
+                    <a href="javascript:;" class="nextShow" data-page="8">
                         <img src="images/bot_btn_01.png" alt="" class="">
                     </a>
                     <a href="javascript:;" class="nextShow">
@@ -285,7 +305,7 @@
                 </a>
             </div>
         </div>
-        <a href="javascript:;" class="muc close_music_div" onclick="pauseAuto()" style="display: block;">
+        <a href="javascript:;" class="muc close_music_div" onclick="pauseAuto()">
             <img src="images/muc.png" alt="">
         </a>
         <a href="javascript:;" class="muc open_music_div" onclick="openmusic()">
@@ -297,86 +317,38 @@
 
 
     <script src="js/jquery-1.8.0.min.js"></script>
+    <script src="js/loadImg.js"></script>
     <script src="js/swiper/js/swiper.min.js"></script>
     <script>
-        (function () {
-            function isArray(obj) {
-                return Object.prototype.toString.call(obj) === '[object Array]';
-            }
+        var swiper = new Swiper('.banner1', {
+            pagination: {
+                el: '.spot1',
+            },
+        });
+        var swiper2 = new Swiper('.banner2', {
+            pagination: {
+                el: '.spot2',
+            },
+        });
+        var swiper3 = new Swiper('.banner3', {
+            pagination: {
+                el: '.spot4',
+            },
+        });
+        setTimeout(function () {
+            $(".page2_arrow").removeClass("animated fadeInDown").addClass("p2_arrow");
+            $(".page2_arrow").attr("style", "");
+        }, 12000)
 
-            /**
-             * @param imgList 要加载的图片地址列表，['aa/asd.png','aa/xxx.png']
-             * @param callback 每成功加载一个图片之后的回调，并传入“已加载的图片总数/要加载的图片总数”表示进度
-             * @param timeout 每个图片加载的超时时间，默认为5s
-             */
-            var loader = function (imgList, callback, timeout) {
-                timeout = timeout || 5000;
-                imgList = isArray(imgList) && imgList || [];
-                callback = typeof (callback) === 'function' && callback;
 
-                var total = imgList.length,
-                    loaded = 0,
-                    imgages = [],
-                    _on = function () {
-                        loaded < total && (++loaded, callback && callback(loaded / total));
-                    };
-
-                if (!total) {
-                    return callback && callback(1);
-                }
-
-                for (var i = 0; i < total; i++) {
-                    imgages[i] = new Image();
-                    imgages[i].onload = imgages[i].onerror = _on;
-                    imgages[i].src = imgList[i];
-                }
-
-                /**
-                 * 如果timeout * total时间范围内，仍有图片未加载出来（判断条件是loaded < total），通知外部环境所有图片均已加载
-                 * 目的是避免用户等待时间过长
-                 */
-                setTimeout(function () {
-                    loaded < total && (loaded = total, callback && callback(loaded / total));
-                }, timeout * total);
-
-            };
-
-            "function" === typeof define && define.cmd ? define(function () {
-                return loader
-            }) : window.imgLoader = loader;
-        })();
-        // console.log($("img").attr("src"))
         var imgurl = [];
         var bgimgurl = ['images/page_bg_02.png', 'images/page_bg_03.png', 'images/page_bg_04.png']
         $("img").each(function (i, t) {
             imgurl.push($("img").eq(i).attr("src"))
         })
         imgurl.concat(bgimgurl)
-        console.log(imgurl)
         var callbacks = [];
-        let imgarr = ['images/page_bg_02.png', 'images/page_bg_03.png', 'images/page_bg_04.png', 'images/page_bg_04.png', 'images/banner/1-1.png', 'images/banner/1-2.png', 'images/banner/1-3.png']
         imgLoader(imgurl, function (percentage) {
-            // var i = callbacks.length;
-            // callbacks.push(function () {
-            //     setTimeout(function () {
-            //         var percentT = percentage * 100;
-            //         $('.loading_box .txt').text((parseInt(percentT)) + '%');
-            //         // $('#loader__progress')[0].style.width = percentT + '%';
-            //         if (percentage == 1) {
-            //             setTimeout(function () {
-            //                 // $('#loader').remove();
-            //                 // Swipe.init();
-            //     $('.page1').hide().next().show();
-            //             }, 100);
-            //         }
-            //         callbacks[i + 1] && callbacks[i + 1]();
-            //     }, 100);
-            // });
-
-            // if (percentage == 1) {
-            //     callbacks[0]();
-            // }
-
             var percentT = percentage * 100;
             $('.loading_box .txt').html((parseInt(percentT)) + '%');
             if (percentage == 1) {
@@ -388,36 +360,18 @@
         // setInterval(function () {
         //     $(".shadow_an").css({ opacity: '0' }).animate({ opacity: '1' }, "normal", "linear");
         // }, 1500)
-        var swiper1 = new Swiper('.banner1', {
-            pagination: {
-                el: '.spot1',
-            },
-        });
-        $(document).ready(function () {
 
-            // var swiper2 = new Swiper('.banner2', {
-            //     pagination: {
-            //         el: '.spot2',
-            //     },
-            // });
-            // var swiper3 = new Swiper('.banner3', {
-            //     pagination: {
-            //         el: '.spot3',
-            //     },
-            // });
-        })
 
         $(".nextShow").on('click', function () {
             let page = $(this).attr("data-page");
             if (page) {
-                debugger
+                // debugger
+                $(".page").hide();
                 $(".page" + page).show()
-                $(this).parents(".page").siblings().hide()
                 return
             }
             $(".page").hide();
             $(this).parents(".page").next().show()
-            $(".close_music_div").show()
         });
         $(".openShare").on("click", function () {
             $(".share").show()
@@ -425,20 +379,7 @@
         $(".cover").on("click", function () {
             $(".share").hide()
         })
-        // var page_le = $(".page").length;
-        // var click_le = 1;
-        // $(".page").on("click", function () {
-        //     console.log(click_le)
-        //     console.log(page_le)
-        //     if (click_le == page_le) {
-        //         return
-        //     };
-        //     click_le++;
-        //     $(this).hide().next().show();
-        // })
-        // $(".page1").on("click", function () {
-        //     $(this).hide().next().show();
-        // })
+
 
         //滑动处理
         var startX, startY;
@@ -463,6 +404,7 @@
                     // 向上
                     // alert("up");
                     $(".page2").hide().next().show()
+                    $(".open_music_div").show()
                     break;
                 case 2:
                     // 向下
@@ -589,7 +531,7 @@
      //     falling.init();
      // },1000)
     </script>
-    <!-- <script>
+    <script>
         //音乐自动播放
         $(document).ready(function () {
             autoPlayMusic();
@@ -644,7 +586,7 @@
                 media.pause();
             }
         }
-    </script> -->
+    </script>
 </body>
 
 </html>
