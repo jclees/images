@@ -43,7 +43,7 @@ imgLoader(imgurl, function (percentage) {
 	// var percentT = percentage * 100;
 	// $('.loading_box .txt').html((parseInt(percentT)) + '%');
 	// if (percentage == 1) {
-	//     $('.page1').hide().next().show();
+	// 	$('.page1').hide().next().show();
 	// }
 
 	var i = callbacks.length;
@@ -77,21 +77,21 @@ setInterval(function () {
 
 
 $(".nextShow").on('click', function () {
-	if ($(this).parents().hasClass("page8")) {
-		return
-	}
+	// if ($(this).parents().hasClass("page8")) {
+	// 	return
+	// }
+
+	$(".page").hide();
 	let page = $(this).attr("data-page");
 	if (page) {
-		debugger
-		$(".page").hide();
-		$(".page" + page).show()
+		// debugger
+		$(".page" + page).addClass("animated fadeIn").show()
 		return
 	}
-	$(".page").hide();
-	$(this).parents(".page").next().show();
+	$(this).parents(".page").next().addClass("animated fadeIn").show();
 
 	if ($(this).parents().hasClass("page3")) {
-		debugger
+		// debugger
 		var swiper1 = new Swiper('.banner1', {
 			pagination: '.spot1',
 		});
@@ -137,7 +137,7 @@ document.addEventListener('touchend', function (ev) {
 		case 1:
 			// 向上
 			// alert("up");
-			$(".page2").hide().next().show()
+			$(".page2").hide().next().addClass("animated fadeIn").show();
 			$(".close_music_div").show()
 			break;
 		case 2:
