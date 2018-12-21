@@ -8,6 +8,15 @@ body {
   width: 100%;
   overflow:hidden;
 }
+.main_bg{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  z-index: 2;
+}
 .auto_img{
   width: 100%;
 }
@@ -73,7 +82,29 @@ body {
 }
 .page3{
   background-image: url(../images/page_bg_03.png);
+ 
 }
+
+@-webkit-keyframes da {
+  0%    { transform: scale(1.1)}
+  50%    { transform: scale(1)}
+  100%  { transform: scale(1.1)}
+}
+/* @-moz-keyframes da {
+  0%    { opacity: .8;}
+  50%    { opacity: .5;}
+  100%  { opacity: .8;}
+}
+@-o-keyframes da {
+  0%    { opacity: .8;}
+  50%    { opacity: .5;}
+  100%  { opacity: .8;}
+}
+@keyframes da {
+  0%    { opacity: .8;}
+  50%    { opacity: .5;}
+  100%  { opacity: .8;}
+} */
 .page4{
   background-image: url(../images/page_bg_04.png);
 }
@@ -187,7 +218,10 @@ body {
       transform: translate(0px, 0px);
   }
 }
-
+.page_main{
+  display: none;
+  z-index: 3;
+}
 .page3_main{
   position: absolute;
   left: 50%;

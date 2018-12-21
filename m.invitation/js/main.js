@@ -40,33 +40,33 @@ imgurl.concat(bgimgurl)
 var callbacks = [];
 imgLoader(imgurl, function (percentage) {
 	// debugger
-	// var percentT = percentage * 100;
-	// $('.loading_box .txt').html((parseInt(percentT)) + '%');
-	// if (percentage == 1) {
-	// 	$('.page1').hide().next().show();
-	// }
-
-	var i = callbacks.length;
-	callbacks.push(function () {
-		setTimeout(function () {
-			var percentT = percentage * 100;
-			$('.loading_box .txt').html((parseInt(percentT)) + '%');
-			if (percentage == 1) {
-				setTimeout(function () {
-					$('.page1').hide().next().show();
-					setTimeout(function () {
-						$(".page2_arrow").removeClass("animated fadeInDown").addClass("p2_arrow");
-						$(".page2_arrow").attr("style", "");
-					}, 19000)
-				}, 100);
-			}
-			callbacks[i + 1] && callbacks[i + 1]();
-		}, 100);
-	});
-
+	var percentT = percentage * 100;
+	$('.loading_box .txt').html((parseInt(percentT)) + '%');
 	if (percentage == 1) {
-		callbacks[0]();
+		$('.page1').hide().next().show();
 	}
+
+	// var i = callbacks.length;
+	// callbacks.push(function () {
+	// 	setTimeout(function () {
+	// 		var percentT = percentage * 100;
+	// 		$('.loading_box .txt').html((parseInt(percentT)) + '%');
+	// 		if (percentage == 1) {
+	// 			setTimeout(function () {
+	// 				$('.page1').hide().next().show();
+	// 				setTimeout(function () {
+	// 					$(".page2_arrow").removeClass("animated fadeInDown").addClass("p2_arrow");
+	// 					$(".page2_arrow").attr("style", "");
+	// 				}, 19000)
+	// 			}, 100);
+	// 		}
+	// 		callbacks[i + 1] && callbacks[i + 1]();
+	// 	}, 100);
+	// });
+
+	// if (percentage == 1) {
+	// 	callbacks[0]();
+	// }
 
 });
 
@@ -76,64 +76,78 @@ imgLoader(imgurl, function (percentage) {
 // }, 1500)
 
 $(".anm_pulse").addClass("animated pulse infinite");
+function nextShow(){
+
+}
 $(".nextShow").on('click', function () {
+	
 	// if ($(this).parents().hasClass("page8")) {
 	// 	return
 	// }
 
-	$(".page").hide();
+	$(".page,.page_main").hide();
 	let page = $(this).attr("data-page");
 	if (page) {
 		// debugger
 		$(".page" + page).addClass("animated fadeIn").show()
+		$(".page" + page).next().show()
 		return
 	}
-	$(this).parents(".page").next().addClass("animated fadeIn").show();
+	console.log($(this).parents(".page_main").next().next())
+	// debugger
+	$(this).parents(".page_main").next().next().addClass("animated fadeIn").show();
+	$(this).parents(".page_main").next().show()
 
-	if ($(this).parents().hasClass("page3")) {
+
+	if ($(this).parents().prev().hasClass("page3")) {
 		// debugger
 		var swiper1 = new Swiper('.banner1', {
 			pagination: {
 				el: '.spot1',
-			  },
+			},
 			on: {
 				slideChangeTransitionStart: function () {
 					// alert(this.activeIndex);//切换结束时，告诉我现在是第几个slide
-					$(".banner1 .tvgif").addClass("tvoldOpacityChange").css("z-index",200)
+					$(".banner1 .tvgif").addClass("tvoldOpacityChange").css("z-index", 200)
 					setTimeout(() => {
-					$(".banner1 .tvgif").removeClass("tvoldOpacityChange")
+						$(".banner1 .tvgif").removeClass("tvoldOpacityChange")
 					}, 600);
 				},
 			},
 		});
 	}
-	if ($(this).parents().hasClass("page5")) {
+	if ($(this).parents().hasClass("page4")) {
+		// setTimeout(res =>{
+		// 	$(".pg_anim").addClass("animated flipInX").show()
+		// },5000)
+	}
+	if ($(this).parents().prev().hasClass("page5")) {
 		var swiper2 = new Swiper('.banner2', {
 			pagination: {
 				el: '.spot2',
-			  },
+			},
 			on: {
 				slideChangeTransitionStart: function () {
 					// alert(this.activeIndex);//切换结束时，告诉我现在是第几个slide
-					$(".banner2 .tvgif").addClass("tvoldOpacityChange").css("z-index",200)
+					$(".banner2 .tvgif").addClass("tvoldOpacityChange").css("z-index", 200)
 					setTimeout(() => {
-					$(".banner2 .tvgif").removeClass("tvoldOpacityChange")
+						$(".banner2 .tvgif").removeClass("tvoldOpacityChange")
 					}, 600);
 				},
 			},
 		});
 	}
-	if ($(this).parents().hasClass("page6")) {
+	if ($(this).parents().prev().hasClass("page6")) {
 		var swiper3 = new Swiper('.banner3', {
 			pagination: {
 				el: '.spot3',
-			  },
+			},
 			on: {
 				slideChangeTransitionStart: function () {
 					// alert(this.activeIndex);//切换结束时，告诉我现在是第几个slide
-					$(".banner3 .tvgif").addClass("tvoldOpacityChange").css("z-index",200)
+					$(".banner3 .tvgif").addClass("tvoldOpacityChange").css("z-index", 200)
 					setTimeout(() => {
-					$(".banner3 .tvgif").removeClass("tvoldOpacityChange")
+						$(".banner3 .tvgif").removeClass("tvoldOpacityChange")
 					}, 600);
 				},
 			},
@@ -171,6 +185,9 @@ document.addEventListener('touchend', function (ev) {
 			// 向上
 			// alert("up");
 			$(".page2").hide().next().addClass("animated fadeIn").show();
+
+$(".page2").next().next().show()
+
 			$(".close_music_div").show()
 			break;
 		case 2:
