@@ -318,48 +318,97 @@ body {
 }
 .page5_main .page5_cen{
   position: relative;
-  padding: 5vw 0 2vw 0;
+  /* margin: 5vw 0 2vw 0; */
 }
+
+/* .door-item {
+  position: absolute;
+  left: 50%;
+  top:50%; 
+  border-radius: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  align-items: center;
+} */
+.door-item{
+  position: absolute;
+  top:50%; 
+  opacity: 0;
+  transform: translate(0,-50%);
+  width: 30.2vw !important;
+}
+.door-item.door-item1{
+  position: absolute;
+  left:25vw;
+  animation: openDoorL 2s ease-in-out .5s forwards;
+}
+.door-item.door-item2{
+  position: absolute;
+  right: 25vw;
+  animation: openDoorR 2s ease-in-out .5s forwards;
+
+}
+
+@keyframes openDoorL {
+  0% {
+    opacity: 1;
+}
+  100% {
+      left: 0vw;
+      opacity: 0;
+  }
+}
+@keyframes openDoorR {
+  0% {
+    opacity: 1;
+}
+  100% {
+    right: 0vw;
+    opacity: 0;
+  }
+}
+
 .page5_main .page5_cen img{
   width: 100%;
 }
-.page5_main .page5_cen img:first-of-type{
+.page5_main .page5_cen .cent_q{
   /* -webkit-transition-property: -webkit-transform;
   -webkit-transition-duration: 1s;
   -moz-transition-property: -moz-transform;
   -moz-transition-duration: 1s; */
-  -webkit-animation: rotate 10s linear infinite;
-  -moz-animation: rotate 10s linear infinite;
-  -o-animation: rotate 10s linear infinite;
-  animation: rotate 10s linear infinite;
+  -webkit-animation: rotate 15s linear infinite;
+  -moz-animation: rotate 15s linear infinite;
+  -o-animation: rotate 15s linear infinite;
+  animation: rotate 15s linear infinite;
 }
-.page5_main .page5_cen img:last-of-type{
+.page5_main .page5_cen .cent_mof{
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
   width: 100%;
-  -webkit-animation: scale .6s both ease-in-out;
-  -moz-animation: scale .6s both ease-in-out;
-  -o-animation: scale .6s both ease-in-out;
-  animation: scale .6s both ease-in-out;
+  opacity: 0;
+  -webkit-animation: scale 2s both 2.5s ease-in-out;
+  -moz-animation: scale 2s both  2.5s ease-in-out;
+  -o-animation: scale 2s both  2.5s ease-in-out;
+  animation: scale 2s both  2.5s ease-in-out;
 }
 
 @-webkit-keyframes scale{
   from{width: 50%;}
-to{width:100%;}
+to{width:100%;opacity: 1;}
 }
 @-moz-keyframes scale{
   from{width: 50%;}
-to{width:100%;}
+to{width:100%;opacity: 1;}
 }
 @-o-keyframes scale{
   from{width: 50%;}
-to{width:100%;}
+to{width:100%;opacity: 1;}
 }
 @keyframes scale{
   from{width: 50%;}
-to{width:100%;}
+to{width:100%;opacity: 1;}
 }
 
 .page8_main{
