@@ -166,7 +166,7 @@
                 <div class="btn_group">
                     <a href="javascript:;" class="nextShow" data-page="8">
                         <img src="images/bot_btn_01.png" alt="" class="">
-                        <img src="images/012.png" alt="" class="shadow_an">
+                        <!-- <img src="images/012.png" alt="" class="shadow_an"> -->
                     </a>
                     <a href="javascript:;" class="nextShow">
                         <img src="images/bot_btn_02.png" alt="" class="">
@@ -320,6 +320,11 @@
     <script src="js/loadImg.js"></script>
     <script src="js/swiper/js/swiper.min.js"></script>
     <script>
+        //音乐自动播放
+        $(document).ready(function () {
+            autoPlayMusic();
+            audioAutoPlay();
+        });
         var swiper = new Swiper('.banner1', {
             pagination: {
                 el: '.spot1',
@@ -398,17 +403,17 @@
             var direction = GetSlideDirection(startX, startY, endX, endY);
             switch (direction) {
                 case 0:
-                    alert("无操作");
+                    // alert("无操作");
                     break;
                 case 1:
                     // 向上
                     // alert("up");
                     $(".page2").hide().next().show()
-                    $(".open_music_div").show()
+                    $(".close_music_div").show()
                     break;
                 case 2:
                     // 向下
-                    alert("down");
+                    // alert("down");
                     break;
 
                 default:
@@ -427,6 +432,55 @@
                 result = 0;
             }
             return result;
+        }
+
+        function openmusic() {
+            autoPlayMusic();
+            audioAutoPlay();
+            $(".close_music_div").css({ "display": "block" });
+            $(".open_music_div").css({ "display": "none" });
+        }
+
+        function pauseAuto() {
+            var audio = document.getElementById('bg-music');
+            audio.pause();
+            $(".close_music_div").css({ "display": "none" });
+            $(".open_music_div").css({ "display": "block" });
+        }
+
+        function audioAutoPlay() {
+            var audio = document.getElementById('bg-music');
+            audio.play();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                audio.play();
+            }, false);
+        }
+        // 音乐播放
+        function autoPlayMusic() {
+            // 自动播放音乐效果，解决浏览器或者APP自动播放问题
+            function musicInBrowserHandler() {
+                musicPlay(true);
+                document.body.removeEventListener('touchstart', musicInBrowserHandler);
+            }
+            document.body.addEventListener('touchstart', musicInBrowserHandler);
+            // 自动播放音乐效果，解决微信自动播放问题
+            function musicInWeixinHandler() {
+                musicPlay(true);
+                document.addEventListener("WeixinJSBridgeReady", function () {
+                    musicPlay(true);
+                }, false);
+                document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+            }
+            document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+        }
+        function musicPlay(isPlay) {
+            var media = document.querySelector('#bg-music');
+            if (isPlay && media.paused) {
+                media.play();
+            }
+            if (!isPlay && !media.paused) {
+                media.pause();
+            }
         }
     </script>
     <script>
@@ -532,60 +586,9 @@
      // },1000)
     </script>
     <script>
-        //音乐自动播放
-        $(document).ready(function () {
-            autoPlayMusic();
-            audioAutoPlay();
-        });
+        
 
-        function openmusic() {
-            autoPlayMusic();
-            audioAutoPlay();
-            $(".close_music_div").css({ "display": "block" });
-            $(".open_music_div").css({ "display": "none" });
-        }
-
-        function pauseAuto() {
-            var audio = document.getElementById('bg-music');
-            audio.pause();
-            $(".close_music_div").css({ "display": "none" });
-            $(".open_music_div").css({ "display": "block" });
-        }
-
-        function audioAutoPlay() {
-            var audio = document.getElementById('bg-music');
-            audio.play();
-            document.addEventListener("WeixinJSBridgeReady", function () {
-                audio.play();
-            }, false);
-        }
-        // 音乐播放
-        function autoPlayMusic() {
-            // 自动播放音乐效果，解决浏览器或者APP自动播放问题
-            function musicInBrowserHandler() {
-                musicPlay(true);
-                document.body.removeEventListener('touchstart', musicInBrowserHandler);
-            }
-            document.body.addEventListener('touchstart', musicInBrowserHandler);
-            // 自动播放音乐效果，解决微信自动播放问题
-            function musicInWeixinHandler() {
-                musicPlay(true);
-                document.addEventListener("WeixinJSBridgeReady", function () {
-                    musicPlay(true);
-                }, false);
-                document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
-            }
-            document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
-        }
-        function musicPlay(isPlay) {
-            var media = document.querySelector('#bg-music');
-            if (isPlay && media.paused) {
-                media.play();
-            }
-            if (!isPlay && !media.paused) {
-                media.pause();
-            }
-        }
+        
     </script>
 </body>
 
