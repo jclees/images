@@ -80,6 +80,12 @@ body {
 .page5{
   background-image: url(../images/page_bg_04.png);
 }
+.page6{
+  background-image: url(../images/page_bg_04.png);
+}
+.page7{
+  background-image: url(../images/page_bg_04.png);
+}
 .page8{
   background-image: url(../images/page_bg_03.png);
 }
@@ -214,6 +220,9 @@ body {
   margin-top: 2vw;
   padding: 0 8vw;
 }
+.btn_group a{
+  position: relative;
+}
 .btn_group img{
   width: 37.5vw;
 }
@@ -236,12 +245,45 @@ body {
 .page5_main .page5_cen img{
   width: 100%;
 }
+.page5_main .page5_cen img:first-of-type{
+  /* -webkit-transition-property: -webkit-transform;
+  -webkit-transition-duration: 1s;
+  -moz-transition-property: -moz-transform;
+  -moz-transition-duration: 1s; */
+  -webkit-animation: rotate 10s linear infinite;
+  -moz-animation: rotate 10s linear infinite;
+  -o-animation: rotate 10s linear infinite;
+  animation: rotate 10s linear infinite;
+}
 .page5_main .page5_cen img:last-of-type{
   position: absolute;
-  left: 0;
+  left: 50%;
   top: 50%;
-  transform: translate(0,-50%);
+  transform: translate(-50%,-50%);
+  width: 100%;
+  -webkit-animation: scale .6s both ease-in-out;
+  -moz-animation: scale .6s both ease-in-out;
+  -o-animation: scale .6s both ease-in-out;
+  animation: scale .6s both ease-in-out;
 }
+
+@-webkit-keyframes scale{
+  from{width: 50%;}
+to{width:100%;}
+}
+@-moz-keyframes scale{
+  from{width: 50%;}
+to{width:100%;}
+}
+@-o-keyframes scale{
+  from{width: 50%;}
+to{width:100%;}
+}
+@keyframes scale{
+  from{width: 50%;}
+to{width:100%;}
+}
+
 .page8_main{
   /* top: 10%; */
 }
