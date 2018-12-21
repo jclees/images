@@ -38,7 +38,7 @@ particlesJS('particles-js',
       }
     },
     "size": {
-      "value": 6, //原子大小
+      "value": 3, //原子大小
       "random": true, // 原子大小随机
       "anim": {
         "enable": false, // 原子渐变

@@ -76,11 +76,10 @@ imgLoader(imgurl, function (percentage) {
 // }, 1500)
 
 $(".anm_pulse").addClass("animated pulse infinite");
-function nextShow(){
 
-}
+
 $(".nextShow").on('click', function () {
-	
+
 	// if ($(this).parents().hasClass("page8")) {
 	// 	return
 	// }
@@ -108,15 +107,18 @@ $(".nextShow").on('click', function () {
 			on: {
 				slideChangeTransitionStart: function () {
 					// alert(this.activeIndex);//切换结束时，告诉我现在是第几个slide
+					openmusic3()
 					$(".banner1 .tvgif").addClass("tvoldOpacityChange").css("z-index", 200)
 					setTimeout(() => {
 						$(".banner1 .tvgif").removeClass("tvoldOpacityChange")
 					}, 600);
-				},
+				}
 			},
 		});
 	}
-	if ($(this).parents().hasClass("page4")) {
+	if ($(this).parents().prev().hasClass("page4")) {
+		// debugger
+		openmusic4()
 		// setTimeout(res =>{
 		// 	$(".pg_anim").addClass("animated flipInX").show()
 		// },5000)
@@ -129,6 +131,7 @@ $(".nextShow").on('click', function () {
 			on: {
 				slideChangeTransitionStart: function () {
 					// alert(this.activeIndex);//切换结束时，告诉我现在是第几个slide
+					openmusic3()
 					$(".banner2 .tvgif").addClass("tvoldOpacityChange").css("z-index", 200)
 					setTimeout(() => {
 						$(".banner2 .tvgif").removeClass("tvoldOpacityChange")
@@ -144,6 +147,7 @@ $(".nextShow").on('click', function () {
 			},
 			on: {
 				slideChangeTransitionStart: function () {
+					openmusic3()
 					// alert(this.activeIndex);//切换结束时，告诉我现在是第几个slide
 					$(".banner3 .tvgif").addClass("tvoldOpacityChange").css("z-index", 200)
 					setTimeout(() => {
@@ -160,7 +164,6 @@ $(".openShare").on("click", function () {
 $(".cover").on("click", function () {
 	$(".share").hide()
 })
-
 
 //滑动处理
 var startX, startY;
@@ -184,10 +187,9 @@ document.addEventListener('touchend', function (ev) {
 		case 1:
 			// 向上
 			// alert("up");
+
 			$(".page2").hide().next().addClass("animated fadeIn").show();
-
-$(".page2").next().next().show()
-
+			$(".page2").next().next().show()
 			$(".close_music_div").show()
 			break;
 		case 2:
@@ -212,6 +214,10 @@ function GetSlideDirection(startX, startY, endX, endY) {
 	}
 	return result;
 }
+
+
+autoPlayMusic();
+audioAutoPlay();
 
 function openmusic() {
 	autoPlayMusic();
@@ -254,6 +260,145 @@ function autoPlayMusic() {
 }
 function musicPlay(isPlay) {
 	var media = document.querySelector('#bg-music');
+	if (isPlay && media.paused) {
+		media.play();
+	}
+	if (!isPlay && !media.paused) {
+		media.pause();
+	}
+}
+
+
+function openmusic2() {
+	autoPlayMusic2();
+	audioAutoPlay2();
+}
+
+function pauseAuto2() {
+	var audio = document.getElementById('bg-music2');
+	audio.pause();
+}
+
+function audioAutoPlay2() {
+	var audio = document.getElementById('bg-music2');
+	audio.play();
+	document.addEventListener("WeixinJSBridgeReady", function () {
+		audio.play();
+	}, false);
+}
+// 音乐播放
+function autoPlayMusic() {
+	// 自动播放音乐效果，解决浏览器或者APP自动播放问题
+	function musicInBrowserHandler() {
+		musicPlay2(true);
+		document.body.removeEventListener('touchstart', musicInBrowserHandler);
+	}
+	document.body.addEventListener('touchstart', musicInBrowserHandler);
+	// 自动播放音乐效果，解决微信自动播放问题
+	function musicInWeixinHandler() {
+		musicPlay2(true);
+		document.addEventListener("WeixinJSBridgeReady", function () {
+			musicPlay2(true);
+		}, false);
+		document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+	}
+	document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+}
+function musicPlay2(isPlay) {
+	var media = document.querySelector('bg-music2');
+	if (isPlay && media.paused) {
+		media.play();
+	}
+	if (!isPlay && !media.paused) {
+		media.pause();
+	}
+}
+
+
+
+function openmusic3() {
+	autoPlayMusic3();
+	audioAutoPlay3();
+}
+
+function pauseAuto3() {
+	var audio = document.getElementById('bg-music3');
+	audio.pause();
+}
+
+function audioAutoPlay3() {
+	var audio = document.getElementById('bg-music3');
+	audio.play();
+	document.addEventListener("WeixinJSBridgeReady", function () {
+		audio.play();
+	}, false);
+}
+// 音乐播放
+function autoPlayMusic3() {
+	// 自动播放音乐效果，解决浏览器或者APP自动播放问题
+	function musicInBrowserHandler() {
+		musicPlay3(true);
+		document.body.removeEventListener('touchstart', musicInBrowserHandler);
+	}
+	document.body.addEventListener('touchstart', musicInBrowserHandler);
+	// 自动播放音乐效果，解决微信自动播放问题
+	function musicInWeixinHandler() {
+		musicPlay3(true);
+		document.addEventListener("WeixinJSBridgeReady", function () {
+			musicPlay3(true);
+		}, false);
+		document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+	}
+	document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+}
+function musicPlay3(isPlay) {
+	var media = document.querySelector('bg-music3');
+	if (isPlay && media.paused) {
+		media.play();
+	}
+	if (!isPlay && !media.paused) {
+		media.pause();
+	}
+}
+
+
+function openmusic4() {
+	autoPlayMusic4();
+	audioAutoPlay4();
+}
+
+function pauseAuto4() {
+	var audio = document.getElementById('bg-music4');
+	audio.pause();
+}
+
+function audioAutoPlay4() {
+	var audio = document.getElementById('bg-music4');
+	audio.play();
+	document.addEventListener("WeixinJSBridgeReady", function () {
+		audio.play();
+	}, false);
+}
+// 音乐播放
+function autoPlayMusic4() {
+	// 自动播放音乐效果，解决浏览器或者APP自动播放问题
+	function musicInBrowserHandler() {
+		musicPlay4(true);
+		document.body.removeEventListener('touchstart', musicInBrowserHandler);
+	}
+	document.body.addEventListener('touchstart', musicInBrowserHandler);
+	// 自动播放音乐效果，解决微信自动播放问题
+	function musicInWeixinHandler() {
+		musicPlay4(true);
+		document.addEventListener("WeixinJSBridgeReady", function () {
+			musicPlay4(true);
+		}, false);
+		document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+	}
+	document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+}
+function musicPlay4(isPlay) {
+	var media = document.querySelector('bg-music4');
 	if (isPlay && media.paused) {
 		media.play();
 	}
