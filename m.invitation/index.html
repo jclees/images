@@ -88,6 +88,28 @@
             /* Internet Explorer 10-11 */
             color: #fff;
         }
+
+        .tvgif {
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 93%;
+        }
+
+        .tvoldOpacityChange {
+            animation: tvoldOpacityChange 5s both linear;
+        }
+
+        @keyframes tvoldOpacityChange {
+            0% {
+                opacity: 1;
+
+            }
+            100% {
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 
@@ -129,14 +151,17 @@
         </div>
         <div class="page page3 animated">
             <div class="page3_main">
-                <img src="images/page3/tit1.png" alt="" class="auto_img">
+                <div class="halo_box">
+                    <img src="images/page3/tit1.png" alt="" class="auto_img">
+                    <img src="images/halo.png" alt="" class="halo ">
+                </div>
                 <img src="images/page3/tit3.png" alt="" class="auto_img" style="padding-top: 6.7vw;">
                 <div class="txt">
                     <p>2018.12月27日 8:00</p>
                     <p>青岛金沙滩希尔顿酒店</p>
                 </div>
                 <a href="javascript:;" class="nextShow">
-                    <img src="images/page3/btn.png" alt="" class="auto_img">
+                    <img src="images/page3/btn.png" alt="" class="auto_img anm_pulse">
                 </a>
             </div>
         </div>
@@ -147,6 +172,7 @@
                 <div class="page4_swp">
                     <img src="images/page4/swiper_bg.png" alt="" class="page4_swp_bg">
                     <div class="swiper-container banner1">
+                        <img src="images/banner/page3-card-tvold.gif" alt="" class="auto_img tvgif">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <img src="images/banner/1-1.png" alt="" class="auto_img">
@@ -165,11 +191,11 @@
                 </div>
                 <div class="btn_group">
                     <a href="javascript:;" class="nextShow" data-page="8">
-                        <img src="images/bot_btn_01.png" alt="" class="">
-                        <img src="images/012.png" alt="" class="shadow_an">
+                        <img src="images/bot_btn_01.png" alt="" class="anm_pulse">
+                        <!-- <img src="images/012.png" alt="" class="shadow_an"> -->
                     </a>
                     <a href="javascript:;" class="nextShow">
-                        <img src="images/bot_btn_02.png" alt="" class="">
+                        <img src="images/bot_btn_02.png" alt="" class="anm_pulse">
                     </a>
                 </div>
             </div>
@@ -184,10 +210,10 @@
                 <img src="images/page5/txt.png" alt="" class="auto_img" style="padding-bottom: 2vw;">
                 <div class="btn_group">
                     <a href="javascript:;" class="nextShow" data-page="8">
-                        <img src="images/bot_btn_01_act.png" alt="" class="img">
+                        <img src="images/bot_btn_01_act.png" alt="" class="img anm_pulse">
                     </a>
                     <a href="javascript:;" class="nextShow">
-                        <img src="images/bot_btn_02_act.png" alt="" class="img">
+                        <img src="images/bot_btn_02_act.png" alt="" class="img anm_pulse">
                     </a>
                 </div>
             </div>
@@ -198,6 +224,7 @@
                 <div class="page4_swp">
                     <img src="images/page4/swiper_bg.png" alt="" class="page4_swp_bg">
                     <div class="swiper-container banner2">
+                        <img src="images/banner/page3-card-tvold.gif" alt="" class="auto_img tvgif">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <img src="images/banner/2-1.png" alt="" class="auto_img">
@@ -216,10 +243,10 @@
                 </div>
                 <div class="btn_group">
                     <a href="javascript:;" class="nextShow" data-page="8">
-                        <img src="images/bot_btn_01.png" alt="" class="">
+                        <img src="images/bot_btn_01.png" alt="" class="anm_pulse">
                     </a>
                     <a href="javascript:;" class="nextShow">
-                        <img src="images/bot_btn_02.png" alt="" class="">
+                        <img src="images/bot_btn_02.png" alt="" class="anm_pulse">
                     </a>
                 </div>
             </div>
@@ -230,6 +257,8 @@
                 <div class="page4_swp">
                     <img src="images/page4/swiper_bg.png" alt="" class="page4_swp_bg">
                     <div class="swiper-container banner3">
+                        <img src="images/banner/page3-card-tvold.gif" alt="" class="auto_img tvgif">
+
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <img src="images/banner/3-1.png" alt="" class="auto_img">
@@ -254,10 +283,10 @@
                 </div>
                 <div class="btn_group">
                     <a href="javascript:;" class="nextShow" data-page="8">
-                        <img src="images/bot_btn_01.png" alt="" class="">
+                        <img src="images/bot_btn_01.png" alt="" class="anm_pulse">
                     </a>
                     <a href="javascript:;" class="nextShow">
-                        <img src="images/bot_btn_02.png" alt="" class="">
+                        <img src="images/bot_btn_02.png" alt="" class="anm_pulse">
                     </a>
                 </div>
             </div>
@@ -265,7 +294,10 @@
 
         <div class="page page8">
             <div class="page3_main page8_main">
-                <img src="images/page3/tit1.png" alt="" class="auto_img">
+                <div class="halo_box">
+                    <img src="images/page3/tit1.png" alt="" class="auto_img">
+                    <img src="images/halo.png" alt="" class="halo ">
+                </div>
                 <img src="images/page3/tit3.png" alt="" class="auto_img" style="padding-top: 6.7vw;">
                 <img src="images/page6/tit.png" alt="" class="auto_img" style="padding: 6vw 0 2vw 0;">
                 <input type="text" placeholder="点击输入姓名" class="inp">
@@ -275,7 +307,7 @@
                     <p>青岛金沙滩希尔顿酒店</p>
                 </div>
                 <a href="javascript:;" class="nextShow">
-                    <img src="images/page6/btn.png" alt="" class="auto_img">
+                    <img src="images/page6/btn.png" alt="" class="auto_img anm_pulse">
                 </a>
             </div>
         </div>
@@ -288,10 +320,10 @@
                 </div>
                 <div class="btn_group">
                     <a href="javascript:;" class="openShare">
-                        <img src="images/bot_btn_03.png" alt="" class="img">
+                        <img src="images/bot_btn_03.png" alt="" class="img anm_pulse">
                     </a>
                     <a href="javascript:;" class="nextShow" data-page="3">
-                        <img src="images/bot_btn_04.png" alt="" class="img">
+                        <img src="images/bot_btn_04.png" alt="" class="img anm_pulse">
                     </a>
                 </div>
             </div>
@@ -301,7 +333,7 @@
             <div class="con">
                 <img src="images/share/arrow.png" alt="" class="auto_img">
                 <a href="javascript:;">
-                    <img src="images/share/btn.png" alt="" class="auto_img">
+                    <img src="images/share/btn.png" alt="" class="auto_img anm_pulse">
                 </a>
             </div>
         </div>
@@ -318,12 +350,12 @@
 
     <script src="js/jquery-1.8.0.min.js"></script>
     <script src="js/loadImg.js"></script>
-    <script src="js/swiper.jquery.min.js"></script>
+    <!-- <script src="js/swiper.jquery.min.js"></script> -->
     <script src="js/main.js"></script>
-    <!-- <script src="js/swiper/js/swiper.min.js"></script> -->
+    <script src="js/swiper/js/swiper.min.js"></script>
     <script>
         // alert(1111111111)
-        
+
 
     </script>
 

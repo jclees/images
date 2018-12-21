@@ -202,6 +202,43 @@ body {
   line-height: 30px;
   padding: 22.7vw 0 12vw 0;
 }
+.page3_main .halo_box{
+  position: relative;
+}
+.page3_main .halo{
+  position: absolute;
+  left: 50%;
+  top:50%; 
+  width: 100%;
+  opacity: .8;
+  z-index: -1;
+  transform: translate(-50%,-50%);
+  -webkit-animation: anm_halo 3s linear infinite;
+  -moz-animation: anm_halo 3s linear infinite;
+  -o-animation: anm_halo 3s linear infinite;
+  animation: anm_halo 3s linear infinite;
+}
+@-webkit-keyframes anm_halo {
+  0%    { opacity: .8;}
+  50%    { opacity: .5;}
+  100%  { opacity: .8;}
+}
+@-moz-keyframes anm_halo {
+  0%    { opacity: .8;}
+  50%    { opacity: .5;}
+  100%  { opacity: .8;}
+}
+@-o-keyframes anm_halo {
+  0%    { opacity: .8;}
+  50%    { opacity: .5;}
+  100%  { opacity: .8;}
+}
+@keyframes anm_halo {
+  0%    { opacity: .8;}
+  50%    { opacity: .5;}
+  100%  { opacity: .8;}
+}
+
 
 .page4_main{
   position: absolute;
