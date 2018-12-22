@@ -1,0 +1,273 @@
+html{
+  width: 100%;
+  height: 100%;
+}
+body {
+  background-image: url(../images/bg2.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.main_color{
+  color: #ffea03;
+}
+.container{
+  text-align: center;
+}
+.logo{
+    position: fixed;
+    top: 4%;
+    left: 4%;
+    width: 225px;
+}
+h2{
+  font-size: 52px;
+}
+h3{
+  font-size: 44px;
+}
+.main{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -ms-transform:translate(-50%,-50%); 	/* IE 9 */
+  -moz-transform:translate(-50%,-50%); 	/* Firefox */
+  -webkit-transform:translate(-50%,-50%); /* Safari 和 Chrome */
+  -o-transform:translate(-50%,-50%); 	/* Opera */
+  width: 100%;
+}
+.main .lt,.main .rt{
+  width: 50%;
+}
+.main .lt{
+  float: left;
+  padding: 8% 0 0 0;
+}
+.main .rt{
+  float: left;
+}
+.total_sum_wrap{
+  display: inline-block;
+  padding:7px 5px;
+  border-radius: 6px;
+  font-size: 57px;
+  margin: 45px 0 50px 0;
+  background: -webkit-linear-gradient(#737373, #3a3839); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#737373, #3a3839); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#737373, #3a3839); /* Firefox 3.6 - 15 */
+  background: linear-gradient(#737373, #3a3839); /* 标准的语法 */
+}
+.total_sum_wrap .nums_bg{
+  background: #fff;
+  padding: 6px 9px;
+}
+.comp_name{
+  font-size: 40px;
+  padding: 22px 0;
+}
+.buy_sum{
+  font-size: 56px;
+}
+.rt_tit{
+  font-size: 48px;
+  padding:12% 0 5% 0;
+  font-weight: 700;
+  display: inline-block;
+}
+.rt_tit div,.rt_tit img{
+  float: left;
+}
+.rt_tit div{
+  padding: 0 15px;
+}
+.rt_tit .rk_l{
+  padding: 10px 0 0 0;
+}
+.rt_tit .rk_r{
+  transform: rotate(180deg);
+  padding:  0 0 10px 0;
+}
+.rt_table{
+  display: inline-block;
+  position: relative;
+}
+.rt_table .table_light{
+  position: absolute;
+  width: 194px;
+  left: 50%;
+  margin-left: -97px;
+}
+.rt_table .table_light.light1{
+  top: -10px;
+}
+.rt_table .table_light.light2{
+  bottom: -13px;
+}
+.rt_table table tr td,.rt_table table tr th{
+  border: 4px solid #21a9ff;
+  padding: 20px;
+}
+.rt_table table tr th{
+  font-weight: 700;
+  font-size: 36px;
+}
+.rt_table table tr td{
+  font-size: 32px;
+}
+.rt_table table tr td.two{
+  max-width: 300px;
+}
+.side_l{
+  transform: translate(-100%,0);
+  -ms-transform:translate(-100%,0); 	/* IE 9 */
+  -moz-transform:translate(-100%,0); 	/* Firefox */
+  -webkit-transform:translate(-100%,0); /* Safari 和 Chrome */
+  -o-transform:translate(-100%,0); 	/* Opera */
+animation:side_l_ani 4s ease-in-out ;
+}
+@-webkit-keyframes side_l_ani {
+  0%    { 
+    transform: translate(0,0);
+-ms-transform:translate(0,0); 	/* IE 9 */
+-moz-transform:translate(0,0); 	/* Firefox */
+-webkit-transform:translate(0,0); /* Safari 和 Chrome */
+-o-transform:translate(0,0); 	/* Opera */
+  }
+  100%  { 
+    transform: translate(-100%,0);
+-ms-transform:translate(-100%,0); 	/* IE 9 */
+-moz-transform:translate(-100%,0); 	/* Firefox */
+-webkit-transform:translate(-100%,0); /* Safari 和 Chrome */
+-o-transform:translate(-100%,0); 	/* Opera */
+  }
+}
+
+@-moz-keyframes side_l_ani {
+  0%    { 
+    transform: translate(0,0);
+-ms-transform:translate(0,0); 	/* IE 9 */
+-moz-transform:translate(0,0); 	/* Firefox */
+-webkit-transform:translate(0,0); /* Safari 和 Chrome */
+-o-transform:translate(0,0); 	/* Opera */
+  }
+  100%  { 
+    transform: translate(-100%,0);
+-ms-transform:translate(-100%,0); 	/* IE 9 */
+-moz-transform:translate(-100%,0); 	/* Firefox */
+-webkit-transform:translate(-100%,0); /* Safari 和 Chrome */
+-o-transform:translate(-100%,0); 	/* Opera */
+  }
+}
+@-o-keyframes side_l_ani {
+  0%    { 
+    transform: translate(0,0);
+-ms-transform:translate(0,0); 	/* IE 9 */
+-moz-transform:translate(0,0); 	/* Firefox */
+-webkit-transform:translate(0,0); /* Safari 和 Chrome */
+-o-transform:translate(0,0); 	/* Opera */
+  }
+  100%  { 
+    transform: translate(-100%,0);
+-ms-transform:translate(-100%,0); 	/* IE 9 */
+-moz-transform:translate(-100%,0); 	/* Firefox */
+-webkit-transform:translate(-100%,0); /* Safari 和 Chrome */
+-o-transform:translate(-100%,0); 	/* Opera */
+  }
+}
+@keyframes side_l_ani {
+  0%    { 
+    transform: translate(0,0);
+-ms-transform:translate(0,0); 	/* IE 9 */
+-moz-transform:translate(0,0); 	/* Firefox */
+-webkit-transform:translate(0,0); /* Safari 和 Chrome */
+-o-transform:translate(0,0); 	/* Opera */
+  }
+  100%  { 
+    transform: translate(-100%,0);
+-ms-transform:translate(-100%,0); 	/* IE 9 */
+-moz-transform:translate(-100%,0); 	/* Firefox */
+-webkit-transform:translate(-100%,0); /* Safari 和 Chrome */
+-o-transform:translate(-100%,0); 	/* Opera */
+  }
+}
+
+
+
+
+.side_show{
+  opacity: 1;
+animation:side_show_ani 1s ease-in-out ;
+}
+@-webkit-keyframes side_show_ani {
+  0%    { 
+    opacity: 0;
+  }
+  100%  { 
+    opacity: 1;
+  }
+}
+
+
+@-moz-keyframes side_show_ani {
+  0%    { 
+    opacity: 0;
+  }
+  100%  { 
+    opacity: 1;
+  }
+}
+@-o-keyframes side_show_ani {
+  0%    { 
+    opacity: 0;
+  }
+  100%  { 
+    opacity: 1;
+  }
+}
+@keyframes side_show_ani {
+  0%    { 
+    opacity: 0;
+  }
+  100%  { 
+    opacity: 1;
+  }
+}
+
+
+.halo{
+  position: absolute;
+  left: 25%;
+  top: 35%;
+  opacity: .8;
+  z-index: -1;
+  transform: translate(-50%,-50%);
+  -webkit-animation: anm_halo 3s linear infinite;
+  -moz-animation: anm_halo 3s linear infinite;
+  -o-animation: anm_halo 3s linear infinite;
+  animation: anm_halo 3s linear infinite;
+}
+@-webkit-keyframes anm_halo {
+  0%    { opacity: .8;}
+  50%    { opacity: .5;}
+  100%  { opacity: .8;}
+}
+@-moz-keyframes anm_halo {
+  0%    { opacity: .8;}
+  50%    { opacity: .5;}
+  100%  { opacity: .8;}
+}
+@-o-keyframes anm_halo {
+  0%    { opacity: .8;}
+  50%    { opacity: .5;}
+  100%  { opacity: .8;}
+}
+@keyframes anm_halo {
+  0%    { opacity: .8;}
+  50%    { opacity: .5;}
+  100%  { opacity: .8;}
+}
