@@ -1,35 +1,35 @@
 //禁止下拉
-var overscroll = function (el) {
-	el.addEventListener('touchstart', function () {
-		var top = el.scrollTop
-			, totalScroll = el.scrollHeight
-			, currentScroll = top + el.offsetHeight
-		//If we're at the top or the bottom of the containers
-		//scroll, push up or down one pixel.
-		//
-		//this prevents the scroll from "passing through" to
-		//the body.
-		if (top === 0) {
-			el.scrollTop = 1
-		} else if (currentScroll === totalScroll) {
-			el.scrollTop = top - 1
-		}
-	})
-	el.addEventListener('touchmove', function (evt) {
-		//if the content is actually scrollable, i.e. the content is long enough
-		//that scrolling can occur
-		if (el.offsetHeight < el.scrollHeight)
-			evt._isScroller = true
-	})
-}
-overscroll(document.querySelector('.body'));
-document.body.addEventListener('touchmove', function (evt) {
-	//In this case, the default behavior is scrolling the body, which
-	//would result in an overflow.  Since we don't want that, we preventDefault.
-	if (!evt._isScroller) {
-		evt.preventDefault()
-	}
-})
+// var overscroll = function (el) {
+// 	el.addEventListener('touchstart', function () {
+// 		var top = el.scrollTop
+// 			, totalScroll = el.scrollHeight
+// 			, currentScroll = top + el.offsetHeight
+// 		//If we're at the top or the bottom of the containers
+// 		//scroll, push up or down one pixel.
+// 		//
+// 		//this prevents the scroll from "passing through" to
+// 		//the body.
+// 		if (top === 0) {
+// 			el.scrollTop = 1
+// 		} else if (currentScroll === totalScroll) {
+// 			el.scrollTop = top - 1
+// 		}
+// 	})
+// 	el.addEventListener('touchmove', function (evt) {
+// 		//if the content is actually scrollable, i.e. the content is long enough
+// 		//that scrolling can occur
+// 		if (el.offsetHeight < el.scrollHeight)
+// 			evt._isScroller = true
+// 	})
+// }
+// overscroll(document.querySelector('.body'));
+// document.body.addEventListener('touchmove', function (evt) {
+// 	//In this case, the default behavior is scrolling the body, which
+// 	//would result in an overflow.  Since we don't want that, we preventDefault.
+// 	if (!evt._isScroller) {
+// 		evt.preventDefault()
+// 	}
+// })
 
 
 // var imgurl = [];
@@ -151,7 +151,7 @@ $(".nextShow").on('click', function () {
 		$(".page" + page).next().show()
 		return
 	}
-	console.log($(this).parents(".page_main").next().next())
+	// console.log($(this).parents(".page_main").next().next())
 	// debugger
 	$(this).parents(".page_main").next().next().addClass("animated fadeIn").show();
 	$(this).parents(".page_main").next().show()
@@ -165,19 +165,23 @@ $(".nextShow").on('click', function () {
 			},
 			on: {
 				slideChangeTransitionStart: function () {
+					audioAutoPlay3();
 					// alert(this.activeIndex);//切换结束时，告诉我现在是第几个slide
-					openmusic3()
 					$(".banner1 .tvgif").addClass("tvoldOpacityChange").css("z-index", 200)
 					setTimeout(() => {
 						$(".banner1 .tvgif").removeClass("tvoldOpacityChange")
 					}, 600);
+				},
+				slideChangeTransitionEnd: function () {
+					// pauseAuto3();
+					// alert(this.activeIndex);//切换结束时，告诉我现在是第几个slide
 				}
 			},
 		});
 	}
 	if ($(this).parents().prev().hasClass("page4")) {
 		// debugger
-		openmusic4()
+		audioAutoPlay4()
 		// setTimeout(res =>{
 		// 	$(".pg_anim").addClass("animated flipInX").show()
 		// },5000)
@@ -190,7 +194,7 @@ $(".nextShow").on('click', function () {
 			on: {
 				slideChangeTransitionStart: function () {
 					// alert(this.activeIndex);//切换结束时，告诉我现在是第几个slide
-					openmusic3()
+					audioAutoPlay3();
 					$(".banner2 .tvgif").addClass("tvoldOpacityChange").css("z-index", 200)
 					setTimeout(() => {
 						$(".banner2 .tvgif").removeClass("tvoldOpacityChange")
@@ -206,7 +210,7 @@ $(".nextShow").on('click', function () {
 			},
 			on: {
 				slideChangeTransitionStart: function () {
-					openmusic3()
+					audioAutoPlay3();
 					// alert(this.activeIndex);//切换结束时，告诉我现在是第几个slide
 					$(".banner3 .tvgif").addClass("tvoldOpacityChange").css("z-index", 200)
 					setTimeout(() => {
@@ -275,8 +279,76 @@ function GetSlideDirection(startX, startY, endX, endY) {
 }
 
 
-autoPlayMusic();
-audioAutoPlay();
+
+
+
+// function openmusic2() {
+// 	autoPlayMusic2();
+// 	audioAutoPlay2();
+// }
+
+// function pauseAuto2() {
+// 	var audio = document.getElementById('bg-music2');
+// 	audio.pause();
+// }
+
+// function audioAutoPlay2() {
+// 	var audio = document.getElementById('bg-music2');
+// 	audio.play();
+// 	document.addEventListener("WeixinJSBridgeReady", function () {
+// 		audio.play();
+// 	}, false);
+// }
+// // 音乐播放
+// function autoPlayMusic() {
+// 	// 自动播放音乐效果，解决浏览器或者APP自动播放问题
+// 	function musicInBrowserHandler() {
+// 		musicPlay2(true);
+// 		document.body.removeEventListener('touchstart', musicInBrowserHandler);
+// 	}
+// 	document.body.addEventListener('touchstart', musicInBrowserHandler);
+// 	// 自动播放音乐效果，解决微信自动播放问题
+// 	function musicInWeixinHandler() {
+// 		musicPlay2(true);
+// 		document.addEventListener("WeixinJSBridgeReady", function () {
+// 			musicPlay2(true);
+// 		}, false);
+// 		document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+// 	}
+// 	document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+// }
+// function musicPlay2(isPlay) {
+// 	var media = document.getElementById('bg-music2');
+// 	if (isPlay && media.paused) {
+// 		media.play();
+// 	}
+// 	if (!isPlay && !media.paused) {
+// 		media.pause();
+// 	}
+// }
+
+
+
+function audioAutoPlay3() {
+	// debugger
+	var audio = document.getElementById('bg-music3');
+	audio.load();
+	audio.play();
+	document.addEventListener("WeixinJSBridgeReady", function () {
+		audio.load();
+		audio.play();
+	}, false);
+}
+
+function audioAutoPlay4() {
+	var audio = document.getElementById('bg-music4');
+	audio.load();
+	audio.play();
+	document.addEventListener("WeixinJSBridgeReady", function () {
+		audio.load();
+		audio.play();
+	}, false);
+}
 
 function openmusic() {
 	autoPlayMusic();
@@ -319,145 +391,6 @@ function autoPlayMusic() {
 }
 function musicPlay(isPlay) {
 	var media = document.getElementById('bg-music');
-	if (isPlay && media.paused) {
-		media.play();
-	}
-	if (!isPlay && !media.paused) {
-		media.pause();
-	}
-}
-
-
-function openmusic2() {
-	autoPlayMusic2();
-	audioAutoPlay2();
-}
-
-function pauseAuto2() {
-	var audio = document.getElementById('bg-music2');
-	audio.pause();
-}
-
-function audioAutoPlay2() {
-	var audio = document.getElementById('bg-music2');
-	audio.play();
-	document.addEventListener("WeixinJSBridgeReady", function () {
-		audio.play();
-	}, false);
-}
-// 音乐播放
-function autoPlayMusic() {
-	// 自动播放音乐效果，解决浏览器或者APP自动播放问题
-	function musicInBrowserHandler() {
-		musicPlay2(true);
-		document.body.removeEventListener('touchstart', musicInBrowserHandler);
-	}
-	document.body.addEventListener('touchstart', musicInBrowserHandler);
-	// 自动播放音乐效果，解决微信自动播放问题
-	function musicInWeixinHandler() {
-		musicPlay2(true);
-		document.addEventListener("WeixinJSBridgeReady", function () {
-			musicPlay2(true);
-		}, false);
-		document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
-	}
-	document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
-}
-function musicPlay2(isPlay) {
-	var media = document.getElementById('bg-music2');
-	if (isPlay && media.paused) {
-		media.play();
-	}
-	if (!isPlay && !media.paused) {
-		media.pause();
-	}
-}
-
-
-
-function openmusic3() {
-	autoPlayMusic3();
-	audioAutoPlay3();
-}
-
-function pauseAuto3() {
-	var audio = document.getElementById('bg-music3');
-	audio.pause();
-}
-
-function audioAutoPlay3() {
-	var audio = document.getElementById('bg-music3');
-	audio.play();
-	document.addEventListener("WeixinJSBridgeReady", function () {
-		audio.play();
-	}, false);
-}
-// 音乐播放
-function autoPlayMusic3() {
-	// 自动播放音乐效果，解决浏览器或者APP自动播放问题
-	function musicInBrowserHandler() {
-		musicPlay3(true);
-		document.body.removeEventListener('touchstart', musicInBrowserHandler);
-	}
-	document.body.addEventListener('touchstart', musicInBrowserHandler);
-	// 自动播放音乐效果，解决微信自动播放问题
-	function musicInWeixinHandler() {
-		musicPlay3(true);
-		document.addEventListener("WeixinJSBridgeReady", function () {
-			musicPlay3(true);
-		}, false);
-		document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
-	}
-	document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
-}
-function musicPlay3(isPlay) {
-	var media = document.getElementById('bg-music3');
-	if (isPlay && media.paused) {
-		media.play();
-	}
-	if (!isPlay && !media.paused) {
-		media.pause();
-	}
-}
-
-
-function openmusic4() {
-	autoPlayMusic4();
-	audioAutoPlay4();
-}
-
-function pauseAuto4() {
-	var audio = document.getElementById('bg-music4');
-	audio.pause();
-}
-
-function audioAutoPlay4() {
-	var audio = document.getElementById('bg-music4');
-	audio.play();
-	document.addEventListener("WeixinJSBridgeReady", function () {
-		audio.play();
-	}, false);
-}
-// 音乐播放
-function autoPlayMusic4() {
-	// 自动播放音乐效果，解决浏览器或者APP自动播放问题
-	function musicInBrowserHandler() {
-		musicPlay4(true);
-		document.body.removeEventListener('touchstart', musicInBrowserHandler);
-	}
-	document.body.addEventListener('touchstart', musicInBrowserHandler);
-	// 自动播放音乐效果，解决微信自动播放问题
-	function musicInWeixinHandler() {
-		musicPlay4(true);
-		document.addEventListener("WeixinJSBridgeReady", function () {
-			musicPlay4(true);
-		}, false);
-		document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
-	}
-	document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
-}
-function musicPlay4(isPlay) {
-	var media = document.getElementById('bg-music4');
 	if (isPlay && media.paused) {
 		media.play();
 	}

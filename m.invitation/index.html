@@ -368,76 +368,76 @@
                 </div>
 
                 <div class="txt_box txt_box4" style="position: absolute;top: 0;left: 50%;transform: translate(-50%,0); width: 100%;">
-                        <div class="animated fadeInDown" style="animation-delay: 15s;">
-                            <div class="text-line t1">
-                                <span>
-                                    <span>用</span>
-                                </span>
-                                <span>
-                                    <span>野</span>
-                                </span>
-                                <span>
-                                    <span>心</span>
-                                </span>
-                                <span>
-                                    <span>和</span>
-                                </span>
-                                <span>
-                                    <span>坚</span>
-                                </span>
-                                <span>
-                                        <span>持</span>
-                                    </span>
-                            </div>
-                        </div>
-                        <div class="animated fadeInDown" style="animation-delay: 16s;">
-                            <div class="text-line t2">
-                                <span>
-                                    <span>一</span>
-                                </span>
-                                <span>
-                                    <span>次</span>
-                                </span>
-                                <span>
-                                    <span>又</span>
-                                </span>
-                                <span>
-                                    <span>一</span>
-                                </span>
-                                <span>
-                                    <span>次</span>
-                                </span>
-                                <span>
-                                    <span>刷</span>
-                                </span>
-                                <span>
-                                    <span>新</span>
-                                </span>
-                                <span>
-                                        <span>着</span>
-                                    </span>
-                            </div>
-                        </div>
-                        <div class="animated fadeInDown" style="animation-delay: 16.5s;">
-                            <div class="text-line t3">
-                                <span>
-                                    <span>我</span>
-                                </span>
-                                <span>
-                                    <span>们</span>
-                                </span>
-                                <span>
-                                    <span>的</span>
-                                </span>
-                                <span>
-                                    <span>”净</span>
-                                </span>
-                                <span>
-                                    <span>彩“</span>
-                                </span>
-                            </div>
+                    <div class="animated fadeInDown" style="animation-delay: 15s;">
+                        <div class="text-line t1">
+                            <span>
+                                <span>用</span>
+                            </span>
+                            <span>
+                                <span>野</span>
+                            </span>
+                            <span>
+                                <span>心</span>
+                            </span>
+                            <span>
+                                <span>和</span>
+                            </span>
+                            <span>
+                                <span>坚</span>
+                            </span>
+                            <span>
+                                <span>持</span>
+                            </span>
                         </div>
                     </div>
+                    <div class="animated fadeInDown" style="animation-delay: 16s;">
+                        <div class="text-line t2">
+                            <span>
+                                <span>一</span>
+                            </span>
+                            <span>
+                                <span>次</span>
+                            </span>
+                            <span>
+                                <span>又</span>
+                            </span>
+                            <span>
+                                <span>一</span>
+                            </span>
+                            <span>
+                                <span>次</span>
+                            </span>
+                            <span>
+                                <span>刷</span>
+                            </span>
+                            <span>
+                                <span>新</span>
+                            </span>
+                            <span>
+                                <span>着</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="animated fadeInDown" style="animation-delay: 16.5s;">
+                        <div class="text-line t3">
+                            <span>
+                                <span>我</span>
+                            </span>
+                            <span>
+                                <span>们</span>
+                            </span>
+                            <span>
+                                <span>的</span>
+                            </span>
+                            <span>
+                                <span>”净</span>
+                            </span>
+                            <span>
+                                <span>彩“</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
                 <img src="images/page2/tit.png" alt="" class="page2_main_tit animated fadeInLeft" style="animation-delay: 16s;">
                 <img src="images/page2/arrow.png" alt="" class="page2_arrow animated fadeInDown" style="animation-delay: 18s;">
             </div>
@@ -661,10 +661,10 @@
 
     </div>
 
-    <audio style="display:none; height: 0" id="bg-music" preload="auto" src="videos/bg_music_01.mp3" loop="loop"></audio>
+    <audio style="display:none; height: 0" id="bg-music" preload="auto" autoplay src="videos/bg_music_01.mp3" loop="loop"></audio>
     <!-- <audio style="display:none; height: 0" id="bg-music2" src="videos/bg_music_02.mp3" loop="loop"></audio> -->
-    <audio style="display:none; height: 0" id="bg-music3" src="videos/bg_music_03.mp3"></audio>
-    <audio style="display:none; height: 0" id="bg-music4" src="videos/bg_music_04.mp3"></audio>
+    <audio style="display:none; height: 0" id="bg-music3" preload="auto" src="videos/bg_music_03.mp3"></audio>
+    <audio style="display:none; height: 0" id="bg-music4" preload="auto" src="videos/bg_music_04.mp3"></audio>
 
 
     <script src="js/jquery-1.8.0.min.js"></script>
@@ -674,6 +674,8 @@
     <script src="js/particles.min.js"></script>
     <script src="js/app.js"></script>
     <script>
+        autoPlayMusic();
+        audioAutoPlay();
     </script>
 
 </body>
