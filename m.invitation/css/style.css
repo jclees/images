@@ -283,7 +283,7 @@ body {
 }
 .page4_main .page4_main_tit{
   width: 100%;
-  padding-bottom: 5vw;
+  /* padding-bottom: 5vw; */
 }
 .page4_swp{
   position: relative;
@@ -318,6 +318,7 @@ body {
 }
 .page5_main .page5_cen{
   position: relative;
+  margin-top: -11vw;
   /* margin: 5vw 0 2vw 0; */
 }
 
