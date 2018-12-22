@@ -674,19 +674,21 @@
     <script src="js/particles.min.js"></script>
     <script src="js/app.js"></script>
     <script>
-        autoPlayMusic();
-        audioAutoPlay();
+        window.onload = function () {
+            autoPlayMusic();
+            audioAutoPlay();
 
-        var audio = document.getElementById('bg-music3');
-        audio.play();
-
-        document.addEventListener("WeixinJSBridgeReady", function () {
+            var audio = document.getElementById('bg-music3');
             audio.play();
-        }, false);
 
-        setTimeout(() => {
-        audio.pause();
-        }, 10);
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                audio.play();
+            }, false);
+            audio.pause();
+        }
+
+
+
 
     </script>
 
