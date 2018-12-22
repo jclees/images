@@ -119,6 +119,9 @@ body {
 }
 .page8{
   background-image: url(../images/page_bg_03.png);
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 .page9{
   background-image: url(../images/page_bg_04.png);
@@ -223,7 +226,7 @@ body {
   z-index: 3;
 }
 .page3_main{
-  position: absolute;
+  position: fixed;
   left: 50%;
   top:50%; 
   width: 100%;
