@@ -22,7 +22,7 @@ var overscroll = function (el) {
 			evt._isScroller = true
 	})
 }
-overscroll(document.querySelector('.page'));
+overscroll(document.querySelector('.body'));
 document.body.addEventListener('touchmove', function (evt) {
 	//In this case, the default behavior is scrolling the body, which
 	//would result in an overflow.  Since we don't want that, we preventDefault.
@@ -31,12 +31,13 @@ document.body.addEventListener('touchmove', function (evt) {
 	}
 })
 
-var imgurl = [];
-var bgimgurl = ['images/page_bg_02.png', 'images/page_bg_03.png', 'images/page_bg_04.png']
+
+// var imgurl = [];
+var imgurl = ['images/page_bg_02.png', 'images/page_bg_03.png', 'images/page_bg_04.png']
 $("img").each(function (i, t) {
 	imgurl.push($("img").eq(i).attr("src"))
 })
-imgurl.concat(bgimgurl)
+console.log(imgurl)
 var callbacks = [];
 imgLoader(imgurl, function (percentage) {
 	// debugger
@@ -53,11 +54,69 @@ imgLoader(imgurl, function (percentage) {
 			$('.loading_box .txt').html((parseInt(percentT)) + '%');
 			if (percentage == 1) {
 				setTimeout(function () {
+					$(".txt_box1 .t1").addClass("text-row0")
+				}, 1000)
+				setTimeout(function () {
+					$(".txt_box1 .t2").addClass("text-row1")
+				}, 1500)
+				setTimeout(function () {
+					$(".txt_box1 .t3").addClass("text-row0")
+				}, 3000)
+
+				setTimeout(function () {
+					$(".txt_box2 .t1").addClass("text-row0")
+				}, 7000)
+				setTimeout(function () {
+					$(".txt_box2 .t2").addClass("text-row1")
+				}, 7500)
+				setTimeout(function () {
+					$(".txt_box2 .t3").addClass("text-row0")
+				}, 8000)
+
+				setTimeout(function () {
+					$(".txt_box3 .t1").addClass("text-row0")
+				}, 10500)
+				setTimeout(function () {
+					$(".txt_box3 .t2").addClass("text-row1")
+				}, 10700)
+
+
+				setTimeout(function () {
+					$(".txt_box4 .t1").addClass("text-row0")
+				}, 11000)
+				setTimeout(function () {
+					$(".txt_box4 .t2").addClass("text-row1")
+				}, 11500)
+				setTimeout(function () {
+					$(".txt_box4 .t3").addClass("text-row0")
+				}, 12000)
+
+				setTimeout(function () {
+					$(".page2_arrow").removeClass("animated fadeInDown").addClass("p2_arrow");
+					$(".page2_arrow").attr("style", "");
+				}, 20000)
+
+				// let timenum = 0;
+				// 	let timer = setInterval(function () {
+				// 		parseInt(timenum++)
+				// 		// debugger
+				// 		if (timenum == 1) {
+				// 			$(".txt_box1 .t1").addClass("text-row0")
+				// 		}else if(timenum == 3){
+				// 			$(".txt_box1 .t2").addClass("text-row1")
+				// 		}else if(timenum == 5){
+				// 			$(".txt_box1 .t3").addClass("text-row0")
+				// 		}else if(timenum == 11){
+				// 			$(".txt_box2 .t1").addClass("text-row0")
+				// 		}else if(timenum == 13){
+				// 			$(".txt_box2 .t1").addClass("text-row1")
+				// 		}else if(timenum == 15){
+				// 			$(".txt_box2 .t1").addClass("text-row0")
+				// 		}
+				// 	}, 1000)
+
+				setTimeout(function () {
 					$('.page1').hide().next().show();
-					setTimeout(function () {
-						$(".page2_arrow").removeClass("animated fadeInDown").addClass("p2_arrow");
-						$(".page2_arrow").attr("style", "");
-					}, 19000)
 				}, 100);
 			}
 			callbacks[i + 1] && callbacks[i + 1]();
@@ -259,7 +318,7 @@ function autoPlayMusic() {
 	document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
 }
 function musicPlay(isPlay) {
-	var media = document.querySelector('#bg-music');
+	var media = document.getElementById('bg-music');
 	if (isPlay && media.paused) {
 		media.play();
 	}
@@ -305,7 +364,7 @@ function autoPlayMusic() {
 	document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
 }
 function musicPlay2(isPlay) {
-	var media = document.querySelector('bg-music2');
+	var media = document.getElementById('bg-music2');
 	if (isPlay && media.paused) {
 		media.play();
 	}
@@ -352,7 +411,7 @@ function autoPlayMusic3() {
 	document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
 }
 function musicPlay3(isPlay) {
-	var media = document.querySelector('bg-music3');
+	var media = document.getElementById('bg-music3');
 	if (isPlay && media.paused) {
 		media.play();
 	}
@@ -398,7 +457,7 @@ function autoPlayMusic4() {
 	document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
 }
 function musicPlay4(isPlay) {
-	var media = document.querySelector('bg-music4');
+	var media = document.getElementById('bg-music4');
 	if (isPlay && media.paused) {
 		media.play();
 	}
