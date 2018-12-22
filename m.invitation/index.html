@@ -663,7 +663,7 @@
 
     <audio style="display:none; height: 0" id="bg-music" preload="auto" autoplay src="videos/bg_music_01.mp3" loop="loop"></audio>
     <!-- <audio style="display:none; height: 0" id="bg-music2" src="videos/bg_music_02.mp3" loop="loop"></audio> -->
-    <audio style="display:none; height: 0" id="bg-music3" preload="auto" src="videos/bg_music_01.mp3"></audio>
+    <audio style="display:none; height: 0" id="bg-music3" preload="auto" src="videos/bg_music_04.mp3"></audio>
     <audio style="display:none; height: 0" id="bg-music4" preload="auto" src="videos/bg_music_04.mp3"></audio>
 
 
@@ -676,11 +676,17 @@
     <script>
         autoPlayMusic();
         audioAutoPlay();
-        
-        var audio = document.getElementById('bg-music3');
-        audioAutoPlay3();
-        audio.pause();
 
+        var audio = document.getElementById('bg-music3');
+        audio.play();
+
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            audio.play();
+        }, false);
+        
+        setTimeout(() => {
+        audio.pause();
+        }, 100);
 
     </script>
 
